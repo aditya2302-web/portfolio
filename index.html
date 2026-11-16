@@ -1,0 +1,4323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADITYA — THE REALM OF CYBER | JECRC University Cyber Security</title>
+  <meta name="description" content="Winter Is Coming. Threats Are Evolving. I Am Preparing. The cinematic Game of Thrones inspired cybersecurity portfolio of Aditya, a first-year B.Tech Cyber Security student at JECRC University.">
+
+  <!-- Favicon / Royal Emblem -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%2308090C' stroke='%23C5A15B' stroke-width='4'/><path d='M50 20 L60 40 L80 40 L65 52 L70 72 L50 60 L30 72 L35 52 L20 40 L40 40 Z' fill='%23C5A15B'/></svg>">
+
+  <!-- Master Stylesheet -->
+    <!-- Self-Contained Master Stylesheet (Guaranteed to load under all environments) -->
+  <style>
+/* ==========================================================================
+   THE REALM OF CYBER — CINEMATIC GAME OF THRONES STYLESHEET
+   Medieval Fantasy Kingdom meets Futuristic Cybersecurity Command Center
+   ========================================================================== */
+
+/* --- GOOGLE FONTS IMPORT --- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+/* --- ROOT VARIABLES & DESIGN SYSTEM --- */
+:root {
+  /* Core Base Colors */
+  --bg-primary: #08090C;
+  --bg-secondary: #111318;
+  --bg-tertiary: #171A21;
+  --bg-card: rgba(17, 19, 24, 0.85);
+  --bg-card-border: rgba(197, 161, 91, 0.22);
+
+  /* Typography Colors */
+  --text-primary: #E7E1D5;
+  --text-secondary: #A3A096;
+  --text-muted: #6B685F;
+  --text-gold: #FFE28A;
+
+  /* Medieval Brand Colors */
+  --gold-primary: #C5A15B;
+  --gold-dark: #8F7238;
+  --gold-light: #F4DE9C;
+  --gold-glow: rgba(197, 161, 91, 0.35);
+
+  --blood-red: #8B1E24;
+  --dragon-red: #E63946;
+  --red-glow: rgba(230, 57, 70, 0.4);
+
+  --ice-blue: #9BC7DF;
+  --ice-glow: rgba(155, 199, 223, 0.4);
+
+  /* Active House Theming (Default: House Stark - Winter is Coming) */
+  --house-accent: #9BC7DF;
+  --house-accent-glow: rgba(155, 199, 223, 0.4);
+  --house-border: rgba(155, 199, 223, 0.3);
+  --house-gradient: linear-gradient(135deg, #9BC7DF 0%, #4A6B82 100%);
+  --house-tagline: "Winter Is Coming";
+
+  /* Typography Stacks */
+  --font-serif: 'Cinzel', 'Trajan Pro', 'Georgia', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Fira Code', 'Courier New', monospace;
+
+  /* Shadows & Depth */
+  --shadow-medieval: 0 10px 30px -10px rgba(0, 0, 0, 0.8), 0 0 20px var(--gold-glow);
+  --shadow-card: 0 12px 35px rgba(0, 0, 0, 0.7);
+  --shadow-glow: 0 0 25px var(--house-accent-glow);
+
+  /* Transitions */
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.2s ease;
+}
+
+/* --- DYNAMIC HOUSE THEME OVERRIDES --- */
+body[data-house="stark"] {
+  --house-accent: #9BC7DF;
+  --house-accent-glow: rgba(155, 199, 223, 0.45);
+  --house-border: rgba(155, 199, 223, 0.35);
+  --house-gradient: linear-gradient(135deg, #CFE7F5 0%, #9BC7DF 50%, #43637B 100%);
+  --house-tagline: "Winter Is Coming";
+}
+
+body[data-house="targaryen"] {
+  --house-accent: #E63946;
+  --house-accent-glow: rgba(230, 57, 70, 0.45);
+  --house-border: rgba(230, 57, 70, 0.4);
+  --house-gradient: linear-gradient(135deg, #FFAAA6 0%, #E63946 50%, #8B1E24 100%);
+  --house-tagline: "Fire and Blood";
+}
+
+body[data-house="lannister"] {
+  --house-accent: #C5A15B;
+  --house-accent-glow: rgba(197, 161, 91, 0.45);
+  --house-border: rgba(197, 161, 91, 0.4);
+  --house-gradient: linear-gradient(135deg, #FFF1C5 0%, #C5A15B 50%, #7A5B1D 100%);
+  --house-tagline: "Hear Me Roar";
+}
+
+body[data-house="nightswatch"] {
+  --house-accent: #00F0FF;
+  --house-accent-glow: rgba(0, 240, 255, 0.45);
+  --house-border: rgba(0, 240, 255, 0.35);
+  --house-gradient: linear-gradient(135deg, #99F8FF 0%, #00F0FF 50%, #086F76 100%);
+  --house-tagline: "Sword in the Darkness";
+}
+
+/* --- RESET & GLOBAL BASE --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.65;
+  background: radial-gradient(circle at 50% 10%, #151821 0%, var(--bg-primary) 70%);
+  color: var(--text-primary);
+  position: relative;
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* Selection */
+::selection {
+  background: var(--gold-dark);
+  color: #FFF;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #08090C;
+}
+::-webkit-scrollbar-thumb {
+  background: #2C281F;
+  border: 1px solid var(--gold-dark);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-primary);
+}
+
+/* Headings Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* Medieval Golden Text Sheen */
+.gold-text-glow {
+  background: linear-gradient(135deg, #FFF0C2 0%, var(--gold-primary) 50%, #876527 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 18px var(--gold-glow));
+}
+
+.house-text-glow {
+  background: var(--house-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 15px var(--house-accent-glow));
+}
+
+/* Subheadings */
+.section-subtitle {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  display: block;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.section-subtitle::before,
+.section-subtitle::after {
+  content: '❖';
+  margin: 0 0.5rem;
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* --- CANVAS & ATMOSPHERIC LAYERS --- */
+#realm-particles-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Torchlight mouse follower effect */
+.torch-spotlight {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(circle 350px at var(--mouse-x, 50vw) var(--mouse-y, 50vh), rgba(197, 161, 91, 0.06), transparent 80%);
+  transition: opacity 0.3s ease;
+}
+
+/* Fog animation layer */
+.realm-fog-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.25;
+  background: radial-gradient(ellipse at 50% 80%, rgba(35, 45, 60, 0.4) 0%, transparent 60%);
+  animation: fogDrift 30s linear infinite alternate;
+}
+
+@keyframes fogDrift {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-25%); }
+}
+
+/* --- CINEMATIC PRELOADER --- */
+#realm-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #050608;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s;
+  animation: preloaderAutoDismiss 0.8s cubic-bezier(0.16, 1, 0.3, 1) 2s forwards;
+  cursor: pointer;
+}
+
+@keyframes preloaderAutoDismiss {
+  0% { opacity: 1; visibility: visible; }
+  90% { opacity: 0; visibility: visible; }
+  100% { opacity: 0; visibility: hidden; pointer-events: none; display: none !important; }
+}
+
+#realm-preloader.loaded {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  display: none !important;
+}
+
+.preloader-emblem {
+  width: 80px;
+  height: 80px;
+  color: var(--gold-primary);
+  margin-bottom: 2rem;
+  animation: emblemPulse 2.5s infinite ease-in-out;
+}
+
+.preloader-title {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  letter-spacing: 0.35em;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.preloader-title span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: letterAppear 0.4s forwards;
+}
+
+.preloader-subtitle {
+  font-family: var(--font-serif);
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.preloader-bar-wrap {
+  width: 200px;
+  height: 2px;
+  background: rgba(197, 161, 91, 0.2);
+  margin-top: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.preloader-bar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: var(--gold-primary);
+  box-shadow: 0 0 10px var(--gold-primary);
+  animation: preloaderFill 1.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes emblemPulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(197, 161, 91, 0.3)); }
+  50% { transform: scale(1.08); filter: drop-shadow(0 0 25px rgba(197, 161, 91, 0.8)); }
+}
+
+@keyframes letterAppear {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes preloaderFill {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+/* --- SCROLL PROGRESS BAR --- */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold-primary), var(--house-accent));
+  box-shadow: 0 0 10px var(--house-accent);
+  z-index: 1001;
+  transition: width 0.1s ease-out;
+}
+
+/* --- NAVIGATION BAR --- */
+.realm-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.4s ease;
+  background: transparent;
+}
+
+.realm-nav.scrolled {
+  background: rgba(8, 9, 12, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 0.85rem 2rem;
+  border-bottom: 1px solid var(--bg-card-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+}
+
+.nav-brand-sigil {
+  width: 34px;
+  height: 34px;
+  color: var(--house-accent);
+  transition: var(--transition-smooth);
+  filter: drop-shadow(0 0 8px var(--house-accent-glow));
+}
+
+.nav-brand-text {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 2.2rem;
+}
+
+.nav-link {
+  font-family: var(--font-serif);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  text-decoration: none;
+  position: relative;
+  padding: 0.4rem 0;
+  transition: var(--transition-fast);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--gold-light);
+  text-shadow: 0 0 10px var(--gold-glow);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--gold-primary);
+  transition: width 0.3s ease;
+  box-shadow: 0 0 8px var(--gold-primary);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* Sound Pill Widget in Nav */
+.sound-toggle-btn {
+  background: rgba(197, 161, 91, 0.1);
+  border: 1px solid var(--gold-dark);
+  color: var(--gold-primary);
+  padding: 0.45rem 0.9rem;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-serif);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: var(--transition-smooth);
+}
+
+.sound-toggle-btn:hover {
+  background: rgba(197, 161, 91, 0.25);
+  box-shadow: 0 0 15px var(--gold-glow);
+  transform: translateY(-1px);
+}
+
+.sound-toggle-btn.playing {
+  border-color: var(--house-accent);
+  color: var(--house-accent);
+  box-shadow: 0 0 15px var(--house-accent-glow);
+}
+
+/* Mobile Hamburger */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--gold-primary);
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+}
+
+/* Mobile Drawer */
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100vh;
+  background: #0B0D12;
+  border-left: 1px solid var(--gold-dark);
+  z-index: 1050;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: -10px 0 40px rgba(0,0,0,0.9);
+}
+
+.mobile-nav-drawer.open {
+  right: 0;
+}
+
+.mobile-drawer-close {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: var(--gold-primary);
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mobile-nav-link {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.mobile-nav-link:hover {
+  color: var(--gold-primary);
+}
+
+/* --- MEDIEVAL BUTTONS --- */
+.btn-realm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.85rem;
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  border-radius: 2px;
+}
+
+.btn-realm-gold {
+  background: linear-gradient(135deg, rgba(197, 161, 91, 0.15) 0%, rgba(143, 114, 56, 0.35) 100%);
+  color: #FFF0C2;
+  border: 1px solid var(--gold-primary);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(197, 161, 91, 0.2);
+}
+
+.btn-realm-gold:hover {
+  background: linear-gradient(135deg, rgba(197, 161, 91, 0.3) 0%, rgba(143, 114, 56, 0.6) 100%);
+  box-shadow: 0 0 25px var(--gold-glow), inset 0 0 20px rgba(197, 161, 91, 0.4);
+  transform: translateY(-2px);
+  color: #FFFFFF;
+}
+
+.btn-realm-outline {
+  background: rgba(17, 19, 24, 0.6);
+  color: var(--text-primary);
+  border: 1px solid rgba(231, 225, 213, 0.25);
+  backdrop-filter: blur(8px);
+}
+
+.btn-realm-outline:hover {
+  border-color: var(--house-accent);
+  color: var(--house-accent);
+  box-shadow: 0 0 20px var(--house-accent-glow);
+  transform: translateY(-2px);
+}
+
+/* Button filigree runes */
+.btn-realm::before,
+.btn-realm::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border: 1px solid var(--gold-primary);
+}
+.btn-realm::before { top: 2px; left: 2px; border-right: none; border-bottom: none; }
+.btn-realm::after { bottom: 2px; right: 2px; border-left: none; border-top: none; }
+
+/* --- SECTION 1: HERO SECTION (THE BEGINNING OF A LEGEND) --- */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 8rem 1.5rem 5rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Hero Iron Throne Background Art */
+.hero-backdrop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 650px;
+  height: 650px;
+  opacity: 0.14;
+  pointer-events: none;
+  z-index: 1;
+  color: var(--gold-primary);
+  filter: drop-shadow(0 0 50px var(--gold-glow));
+  animation: throneBreath 8s infinite ease-in-out;
+}
+
+@keyframes throneBreath {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.12; }
+  50% { transform: translate(-50%, -50%) scale(1.04); opacity: 0.2; }
+}
+
+/* Dramatic Golden Light Burst behind Heading */
+.hero-golden-light {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 250px;
+  background: radial-gradient(ellipse at center, rgba(197, 161, 91, 0.22) 0%, rgba(139, 30, 36, 0.1) 45%, transparent 75%);
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(35px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 900px;
+}
+
+.hero-tagline-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 1.25rem;
+  background: rgba(17, 19, 24, 0.7);
+  border: 1px solid var(--house-border);
+  border-radius: 30px;
+  margin-bottom: 1.8rem;
+  backdrop-filter: blur(10px);
+}
+
+.hero-tagline-badge svg {
+  width: 16px;
+  height: 16px;
+  color: var(--house-accent);
+}
+
+.hero-tagline-text {
+  font-family: var(--font-serif);
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--house-accent);
+  font-weight: 600;
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 6.5vw, 4.8rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 0.12em;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 2.2vw, 1.4rem);
+  letter-spacing: 0.18em;
+  color: var(--gold-light);
+  margin-bottom: 1.8rem;
+  font-weight: 600;
+}
+
+.hero-intro {
+  font-size: clamp(0.95rem, 1.3vw, 1.12rem);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 760px;
+  margin: 0 auto 2.5rem;
+  font-weight: 400;
+}
+
+.hero-cta-group {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+}
+
+/* Animated Scroll Indicator */
+.hero-scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.hero-scroll-indicator:hover {
+  opacity: 1;
+}
+
+.scroll-text {
+  font-family: var(--font-serif);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+}
+
+.scroll-sword-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--gold-primary);
+  animation: swordBounce 2.2s infinite ease-in-out;
+}
+
+@keyframes swordBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* --- INTERACTIVE HOUSE SELECTOR BANNER --- */
+.house-selector-strip {
+  width: 100%;
+  max-width: 820px;
+  margin: 2.5rem auto 0;
+  padding: 1.25rem 1.5rem;
+  background: rgba(17, 19, 24, 0.75);
+  border: 1px solid var(--bg-card-border);
+  backdrop-filter: blur(12px);
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  position: relative;
+  z-index: 3;
+}
+
+.house-selector-heading {
+  font-family: var(--font-serif);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.house-options-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+}
+
+.house-card-btn {
+  background: rgba(8, 9, 12, 0.65);
+  border: 1px solid rgba(197, 161, 91, 0.2);
+  padding: 0.75rem 0.5rem;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  color: var(--text-secondary);
+}
+
+.house-card-btn:hover {
+  border-color: var(--gold-primary);
+  background: rgba(24, 27, 34, 0.8);
+  transform: translateY(-2px);
+}
+
+.house-card-btn.active {
+  border-color: var(--house-accent);
+  background: rgba(24, 27, 34, 0.95);
+  box-shadow: 0 0 18px var(--house-accent-glow);
+  color: var(--text-primary);
+}
+
+.house-sigil-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.house-card-name {
+  font-family: var(--font-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.house-card-motto {
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  font-style: italic;
+}
+
+/* --- MEDIEVAL SECTION WRAPPER & HEADINGS --- */
+.realm-section {
+  padding: 7rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.75rem;
+  position: relative;
+  display: inline-block;
+}
+
+.medieval-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.medieval-divider-line {
+  height: 1px;
+  width: 80px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+}
+
+.medieval-divider-rune {
+  color: var(--gold-primary);
+  font-size: 0.9rem;
+}
+
+/* --- SECTION 2: ABOUT SECTION (KNOW THE WARRIOR) --- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Ancient Medieval Parchment Card */
+.parchment-card {
+  background: #0E1015;
+  border: 1px solid var(--gold-dark);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), inset 0 0 40px rgba(0, 0, 0, 0.8);
+  padding: 3rem;
+  position: relative;
+  border-radius: 3px;
+}
+
+/* Parchment ornate double border */
+.parchment-card::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 1px solid rgba(197, 161, 91, 0.25);
+  pointer-events: none;
+}
+
+/* Corner filigree diamonds */
+.parchment-card .corner-rune {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  color: var(--gold-primary);
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.corner-tl { top: 4px; left: 4px; }
+.corner-tr { top: 4px; right: 4px; }
+.corner-bl { bottom: 4px; left: 4px; }
+.corner-br { bottom: 4px; right: 4px; }
+
+.parchment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px dashed rgba(197, 161, 91, 0.25);
+}
+
+.parchment-seal {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.seal-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--gold-primary);
+}
+
+.seal-meta h4 {
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  color: var(--gold-light);
+}
+
+.seal-meta span {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+/* View Mode Switcher: Royal Parchment vs Cyber Terminal */
+.mode-toggle-btn {
+  background: rgba(17, 19, 24, 0.8);
+  border: 1px solid var(--gold-dark);
+  color: var(--gold-primary);
+  padding: 0.4rem 0.85rem;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: var(--transition-fast);
+}
+
+.mode-toggle-btn:hover {
+  background: var(--gold-primary);
+  color: #08090C;
+}
+
+.parchment-body p {
+  color: var(--text-primary);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin-bottom: 1.35rem;
+  text-align: justify;
+}
+
+.parchment-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Medieval Quote Callout */
+.medieval-quote-callout {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(197, 161, 91, 0.06);
+  border-left: 3px solid var(--gold-primary);
+  position: relative;
+}
+
+.quote-text {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--gold-light);
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+.quote-author {
+  font-family: var(--font-serif);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* Terminal Mode Output Styling */
+.terminal-view-wrap {
+  display: none;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: #38BDF8;
+}
+
+.terminal-view-wrap.active {
+  display: block;
+}
+
+.parchment-body.hidden {
+  display: none;
+}
+
+.term-cmd {
+  color: var(--gold-primary);
+  margin-bottom: 0.85rem;
+}
+
+.term-output {
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+  white-space: pre-line;
+}
+
+/* Info Cards Column */
+.about-cards-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.info-card {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-card-border);
+  padding: 1.85rem;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-smooth);
+}
+
+.info-card:hover {
+  border-color: var(--gold-primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px var(--gold-glow);
+  transform: translateY(-3px);
+}
+
+.info-card-num {
+  font-family: var(--font-serif);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--gold-primary);
+  margin-bottom: 0.5rem;
+}
+
+.info-card-title {
+  font-size: 1.05rem;
+  letter-spacing: 0.15em;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.info-card-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Card left glowing accent line */
+.info-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--gold-primary), transparent);
+}
+
+/* --- SECTION 3: SKILLS SECTION (THE WEAPONS OF MY TRADE) --- */
+.arsenal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.arsenal-card {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-card-border);
+  border-radius: 4px;
+  padding: 2.2rem 1.8rem;
+  position: relative;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.arsenal-card:hover {
+  border-color: var(--gold-primary);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 25px var(--gold-glow);
+  transform: translateY(-4px);
+}
+
+.arsenal-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(197, 161, 91, 0.18);
+}
+
+.arsenal-badge-icon {
+  width: 44px;
+  height: 44px;
+  padding: 8px;
+  background: rgba(197, 161, 91, 0.1);
+  border: 1px solid var(--gold-dark);
+  border-radius: 3px;
+  color: var(--gold-primary);
+  flex-shrink: 0;
+}
+
+.arsenal-header-text h3 {
+  font-size: 1.05rem;
+  letter-spacing: 0.15em;
+  color: var(--text-primary);
+}
+
+.arsenal-header-text span {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill-name {
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.skill-name svg {
+  width: 14px;
+  height: 14px;
+  color: var(--gold-primary);
+}
+
+/* Authentic Beginner Badges */
+.skill-tier-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tier-learning {
+  background: rgba(197, 161, 91, 0.15);
+  color: #FFE28A;
+  border: 1px solid rgba(197, 161, 91, 0.4);
+}
+
+.tier-exploring {
+  background: rgba(155, 199, 223, 0.15);
+  color: #9BC7DF;
+  border: 1px solid rgba(155, 199, 223, 0.4);
+}
+
+.tier-familiar {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38BDF8;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+}
+
+/* Glowing Learning Progress Bar */
+.skill-bar-wrap {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold-primary));
+  box-shadow: 0 0 8px var(--gold-glow);
+  position: relative;
+  transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Subtle glowing pulse on learning bar tips */
+.skill-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 100%;
+  background: #FFFFFF;
+  box-shadow: 0 0 6px #FFFFFF;
+}
+
+/* --- SECTION 4: PROJECTS SECTION (BATTLES FOUGHT) --- */
+.battles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.2rem;
+}
+
+.battle-card {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-card-border);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.battle-card:hover {
+  border-color: var(--gold-primary);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9), 0 0 30px var(--gold-glow);
+}
+
+/* 3D tilt glare overlay */
+.card-glare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--mouse-card-x, 50%) var(--mouse-card-y, 50%), rgba(255, 255, 255, 0.08), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.battle-card:hover .card-glare {
+  opacity: 1;
+}
+
+/* Artwork Banner */
+.battle-art-banner {
+  height: 180px;
+  background: linear-gradient(180deg, #181B22 0%, #0F1116 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(197, 161, 91, 0.15);
+}
+
+.battle-art-svg {
+  width: 80px;
+  height: 80px;
+  color: var(--gold-primary);
+  opacity: 0.8;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.battle-card:hover .battle-art-svg {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 15px var(--gold-glow));
+}
+
+.battle-art-grid-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+  background-image: linear-gradient(rgba(197, 161, 91, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(197, 161, 91, 0.3) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.battle-status-tag {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  padding: 0.3rem 0.75rem;
+  border-radius: 2px;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+}
+
+.status-in-progress {
+  background: rgba(197, 161, 91, 0.2);
+  color: #FFE28A;
+  border: 1px solid var(--gold-primary);
+  box-shadow: 0 0 10px rgba(197, 161, 91, 0.25);
+}
+
+.status-planned {
+  background: rgba(155, 199, 223, 0.18);
+  color: #9BC7DF;
+  border: 1px solid var(--ice-blue);
+}
+
+.battle-card-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.battle-title {
+  font-size: 1.18rem;
+  letter-spacing: 0.12em;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.battle-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.tech-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.tech-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 0.25rem 0.65rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  color: var(--gold-light);
+}
+
+.battle-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(197, 161, 91, 0.15);
+}
+
+.btn-github-modal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(197, 161, 91, 0.1);
+  border: 1px solid var(--gold-dark);
+  color: var(--gold-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  font-family: var(--font-serif);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-github-modal:hover {
+  background: var(--gold-primary);
+  color: #08090C;
+  box-shadow: 0 0 15px var(--gold-glow);
+}
+
+.btn-github-modal svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* --- SECTION 5: JOURNEY SECTION (THE CHRONICLES OF MY JOURNEY) --- */
+.journey-timeline-wrap {
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Vertical Golden Spine */
+.timeline-spine {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 0%, var(--gold-primary) 15%, var(--gold-primary) 85%, transparent 100%);
+  box-shadow: 0 0 12px var(--gold-glow);
+}
+
+.timeline-spine-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: #FFE28A;
+  box-shadow: 0 0 15px #FFE28A;
+  transition: height 0.2s ease-out;
+}
+
+.timeline-chapter-item {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  align-items: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.timeline-chapter-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-chapter-item:nth-child(even) .chapter-card {
+  grid-column: 3;
+}
+.timeline-chapter-item:nth-child(even) .chapter-spacer {
+  grid-column: 1;
+}
+
+.chapter-milestone-node {
+  grid-column: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 4;
+}
+
+.milestone-rune-circle {
+  width: 36px;
+  height: 36px;
+  background: #08090C;
+  border: 2px solid var(--gold-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-light);
+  box-shadow: 0 0 15px var(--gold-glow);
+  transition: var(--transition-smooth);
+}
+
+.milestone-rune-circle svg {
+  width: 16px;
+  height: 16px;
+}
+
+.timeline-chapter-item:hover .milestone-rune-circle {
+  transform: scale(1.2);
+  border-color: #FFE28A;
+  box-shadow: 0 0 25px rgba(255, 226, 138, 0.8);
+}
+
+.chapter-card {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-card-border);
+  padding: 2rem;
+  border-radius: 3px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.chapter-card:hover {
+  border-color: var(--gold-primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px var(--gold-glow);
+  transform: translateY(-3px);
+}
+
+.chapter-num {
+  font-family: var(--font-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--gold-primary);
+  margin-bottom: 0.4rem;
+}
+
+.chapter-title {
+  font-size: 1.15rem;
+  letter-spacing: 0.12em;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.chapter-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* --- SECTION 6: FOOTER (THE FINAL OATH) --- */
+.realm-footer {
+  background: #050608;
+  border-top: 1px solid rgba(197, 161, 91, 0.25);
+  padding: 6rem 1.5rem 3rem;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  overflow: hidden;
+}
+
+.footer-sigil-wrap {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 2rem;
+  color: var(--gold-primary);
+  filter: drop-shadow(0 0 20px var(--gold-glow));
+  animation: emblemPulse 4s infinite ease-in-out;
+}
+
+.footer-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--gold-light);
+  max-width: 800px;
+  margin: 0 auto 1rem;
+  line-height: 1.5;
+}
+
+.footer-sub-quote {
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  letter-spacing: 0.25em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.social-circle-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(17, 19, 24, 0.8);
+  border: 1px solid var(--gold-dark);
+  color: var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.social-circle-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.social-circle-btn:hover {
+  background: var(--gold-primary);
+  color: #08090C;
+  box-shadow: 0 0 20px var(--gold-glow);
+  transform: translateY(-3px);
+}
+
+.footer-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.footer-back-to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: none;
+  border: none;
+  color: var(--gold-primary);
+  font-family: var(--font-serif);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.footer-back-to-top:hover {
+  color: #FFE28A;
+  transform: translateY(-2px);
+}
+
+/* Floating Back-To-Top Button */
+#back-to-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(11, 13, 18, 0.9);
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-smooth);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8);
+}
+
+#back-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+#back-to-top-btn:hover {
+  background: var(--gold-primary);
+  color: #08090C;
+  box-shadow: 0 0 20px var(--gold-glow);
+  transform: translateY(-3px);
+}
+
+/* --- FLOATING MUSIC CONTROLLER PANEL --- */
+.floating-music-panel {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  background: rgba(11, 13, 18, 0.92);
+  border: 1px solid var(--gold-dark);
+  border-radius: 40px;
+  padding: 0.55rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 999;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  transition: var(--transition-smooth);
+}
+
+.floating-music-panel:hover {
+  border-color: var(--gold-primary);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.9), 0 0 20px var(--gold-glow);
+}
+
+.audio-ctrl-btn {
+  background: none;
+  border: none;
+  color: var(--gold-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: var(--transition-fast);
+}
+
+.audio-ctrl-btn:hover {
+  color: #FFE28A;
+  transform: scale(1.15);
+}
+
+.audio-ctrl-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.audio-track-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.audio-track-title {
+  font-family: var(--font-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.audio-track-status {
+  font-size: 0.62rem;
+  color: var(--gold-primary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#realm-audio-bars {
+  width: 70px;
+  height: 22px;
+}
+
+.volume-slider-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.volume-slider-wrap input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 60px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  outline: none;
+}
+
+.volume-slider-wrap input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold-primary);
+  cursor: pointer;
+  box-shadow: 0 0 6px var(--gold-glow);
+}
+
+/* --- REUSABLE MODAL DIALOG --- */
+.realm-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(5, 6, 8, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s;
+}
+
+.realm-modal-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.realm-modal-window {
+  background: #0D0F14;
+  border: 1px solid var(--gold-primary);
+  border-radius: 4px;
+  max-width: 650px;
+  width: 100%;
+  padding: 2.5rem;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 40px var(--gold-glow);
+  transform: translateY(20px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.realm-modal-backdrop.open .realm-modal-window {
+  transform: translateY(0);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  color: var(--gold-primary);
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  transition: transform 0.2s;
+}
+
+.modal-close-btn:hover {
+  transform: rotate(90deg);
+  color: #FFF;
+}
+
+.modal-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(197, 161, 91, 0.2);
+}
+
+.modal-title {
+  font-size: 1.35rem;
+  letter-spacing: 0.12em;
+  color: var(--text-primary);
+}
+
+.modal-subtitle {
+  font-family: var(--font-serif);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+}
+
+.modal-content {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.modal-code-snippet {
+  background: #060709;
+  border: 1px solid rgba(197, 161, 91, 0.3);
+  padding: 1rem;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: #38BDF8;
+  margin: 1rem 0;
+  overflow-x: auto;
+  position: relative;
+}
+
+/* Copy button in code snippet */
+.copy-snippet-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: rgba(197, 161, 91, 0.2);
+  border: 1px solid var(--gold-dark);
+  color: var(--gold-primary);
+  font-family: var(--font-serif);
+  font-size: 0.65rem;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.copy-snippet-btn:hover {
+  background: var(--gold-primary);
+  color: #08090C;
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 1024px) {
+  .arsenal-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .battles-grid {
+    grid-template-columns: 1fr;
+  }
+  .timeline-chapter-item {
+    grid-template-columns: 40px 1fr;
+    gap: 1.5rem;
+  }
+  .timeline-spine {
+    left: 20px;
+  }
+  .chapter-milestone-node {
+    grid-column: 1;
+  }
+  .chapter-card {
+    grid-column: 2 !important;
+  }
+  .timeline-chapter-item .chapter-spacer {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: block;
+  }
+  .house-options-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .floating-music-panel {
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    justify-content: space-between;
+    padding: 0.45rem 1rem;
+  }
+  .volume-slider-wrap {
+    display: none;
+  }
+  #back-to-top-btn {
+    bottom: 4.8rem;
+    right: 1rem;
+  }
+  .parchment-card {
+    padding: 1.8rem 1.4rem;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .footer-meta {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  #realm-particles-canvas {
+    display: none;
+  }
+}
+
+  </style>
+</head>
+<body data-house="stark">
+
+  <!-- ========================================================================
+       CINEMATIC PRELOADER
+       ======================================================================== -->
+  <div id="realm-preloader" onclick="this.classList.add('loaded'); if(window.realmAudio && !window.realmAudio.isPlaying) window.realmAudio.start();" title="Click to enter the realm">
+    <div class="preloader-emblem" data-realm-icon="crown">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:50px;height:50px;margin:0 auto 1rem;color:#C5A15B;display:block;"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg>
+    </div>
+    <h1 class="preloader-title" id="preloader-title">THE REALM OF CYBER</h1>
+    <div class="preloader-subtitle">From the First Semester to the Frontlines of Cybersecurity</div>
+    <div class="preloader-bar-wrap">
+      <div class="preloader-bar-fill"></div>
+    </div>
+    <div style="font-family:var(--font-serif); font-size:10px; color:#A3A096; letter-spacing:0.2em; margin-top:1.5rem; text-transform:uppercase; opacity:0.7;">
+      [ Click anywhere to enter ]
+    </div>
+  </div>
+
+  <script>
+    // Fail-safe preloader dismissal
+    setTimeout(function() {
+      var p = document.getElementById('realm-preloader');
+      if (p) p.classList.add('loaded');
+    }, 1800);
+  </script>
+
+  <!-- Top Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Ambient Canvas Particles & Lighting Layers -->
+  <canvas id="realm-particles-canvas"></canvas>
+  <div class="torch-spotlight"></div>
+  <div class="realm-fog-layer"></div>
+
+  <!-- ========================================================================
+       STICKY NAVIGATION BAR
+       ======================================================================== -->
+  <header class="realm-nav" id="realm-nav">
+    <a href="#" class="nav-brand">
+      <div class="nav-brand-sigil" id="nav-house-sigil" data-realm-icon="stark"></div>
+      <span class="nav-brand-text">THE REALM OF CYBER</span>
+    </a>
+
+    <!-- Exactly the 4 main content sections -->
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">ABOUT</a></li>
+        <li><a href="#skills" class="nav-link">SKILLS</a></li>
+        <li><a href="#projects" class="nav-link">PROJECTS</a></li>
+        <li><a href="#journey" class="nav-link">JOURNEY</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <!-- Quick Sound Pill in Nav -->
+      <button class="sound-toggle-btn" id="nav-sound-toggle" aria-label="Toggle Medieval Soundtrack">
+        <span data-realm-icon="sparkles" style="width:14px;height:14px;display:inline-block;"></span>
+        <span>SOUNDTRACK</span>
+      </button>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Navigation Menu">
+        <span data-realm-icon="menu"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close Menu">
+      <span data-realm-icon="close"></span>
+    </button>
+    <ul class="mobile-nav-links">
+      <li><a href="#about" class="mobile-nav-link">ABOUT</a></li>
+      <li><a href="#skills" class="mobile-nav-link">SKILLS</a></li>
+      <li><a href="#projects" class="mobile-nav-link">PROJECTS</a></li>
+      <li><a href="#journey" class="mobile-nav-link">JOURNEY</a></li>
+    </ul>
+    <div style="margin-top:auto; padding-top:2rem; border-top:1px solid rgba(197,161,91,0.2);">
+      <div style="font-family:var(--font-serif); font-size:0.75rem; letter-spacing:0.2em; color:var(--gold-primary); margin-bottom:0.75rem;">THE WARRIOR'S OATH</div>
+      <p style="font-size:0.8rem; color:var(--text-muted); line-height:1.6;">"Winter Is Coming. Threats Are Evolving. I Am Preparing."</p>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       SECTION 1: HERO SECTION — THE BEGINNING OF A LEGEND
+       ======================================================================== -->
+  <main>
+    <section class="hero-section" id="hero">
+      <!-- Iron Throne Silhouetted Art in Background -->
+      <div class="hero-backdrop" data-realm-icon="ironThrone"></div>
+      
+      <!-- Dramatic Golden Light Burst -->
+      <div class="hero-golden-light"></div>
+
+      <div class="hero-content">
+        <!-- Dynamic House Tagline Badge -->
+        <div class="hero-tagline-badge">
+          <span data-realm-icon="shield"></span>
+          <span class="hero-tagline-text" id="hero-house-motto">Winter Is Coming. Threats Are Evolving. I Am Preparing.</span>
+        </div>
+
+        <h1 class="hero-title gold-text-glow">THE REALM OF CYBER</h1>
+
+        <h2 class="hero-subtitle">From the First Semester to the Frontlines of Cybersecurity.</h2>
+
+        <p class="hero-intro">
+          Every legend begins somewhere. Mine begins with curiosity, code, and the determination to understand the digital world. I am <strong>Aditya</strong>, a first-year B.Tech Cyber Security student at <strong>JECRC University</strong>, beginning my journey to explore, defend, and conquer the ever-evolving realm of technology.
+        </p>
+
+        <!-- Two Primary CTAs -->
+        <div class="hero-cta-group">
+          <a href="#about" class="btn-realm btn-realm-gold">
+            <span data-realm-icon="castle" style="width:16px;height:16px;"></span>
+            <span>EXPLORE MY REALM</span>
+          </a>
+          <a href="#journey" class="btn-realm btn-realm-outline">
+            <span data-realm-icon="scroll" style="width:16px;height:16px;"></span>
+            <span>VIEW MY JOURNEY</span>
+          </a>
+        </div>
+
+        <!-- Interactive Choose Your House Feature -->
+        <div class="house-selector-strip">
+          <div class="house-selector-heading">⚔️ CHOOSE YOUR ALLEGIANCE TO SHAPE THE REALM ⚔️</div>
+          <div class="house-options-grid">
+            <!-- House Stark -->
+            <button class="house-card-btn active" data-house-id="stark" aria-label="Pledge to House Stark">
+              <div class="house-sigil-icon" data-realm-icon="stark"></div>
+              <div class="house-card-name">HOUSE STARK</div>
+              <div class="house-card-motto">Discipline & Resilience</div>
+            </button>
+            <!-- House Targaryen -->
+            <button class="house-card-btn" data-house-id="targaryen" aria-label="Pledge to House Targaryen">
+              <div class="house-sigil-icon" data-realm-icon="targaryen"></div>
+              <div class="house-card-name">TARGARYEN</div>
+              <div class="house-card-motto">Ambition & Power</div>
+            </button>
+            <!-- House Lannister -->
+            <button class="house-card-btn" data-house-id="lannister" aria-label="Pledge to House Lannister">
+              <div class="house-sigil-icon" data-realm-icon="lannister"></div>
+              <div class="house-card-name">LANNISTER</div>
+              <div class="house-card-motto">Strategy & Intelligence</div>
+            </button>
+            <!-- The Night's Watch / Cyber Defense -->
+            <button class="house-card-btn" data-house-id="nightswatch" aria-label="Pledge to Night's Watch">
+              <div class="house-sigil-icon" data-realm-icon="shieldCyber"></div>
+              <div class="house-card-name">NIGHT'S WATCH</div>
+              <div class="house-card-motto">Shield of the Realm</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Animated Scroll Indicator -->
+        <a href="#about" class="hero-scroll-indicator" style="margin-top: 3.5rem;">
+          <span class="scroll-text">THE JOURNEY BEGINS BELOW</span>
+          <div class="scroll-sword-icon" data-realm-icon="chevronDown"></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 2: ABOUT SECTION — KNOW THE WARRIOR
+         ======================================================================== -->
+    <section class="realm-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">A CHRONICLE OF ORIGINS</span>
+          <h2 class="section-title gold-text-glow">THE WARRIOR BEHIND THE SCREEN</h2>
+          <div class="medieval-divider">
+            <div class="medieval-divider-line"></div>
+            <div class="medieval-divider-rune">❖</div>
+            <div class="medieval-divider-line"></div>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <!-- Medieval Parchment Card -->
+          <div class="parchment-card">
+            <div class="corner-rune corner-tl">◆</div>
+            <div class="corner-rune corner-tr">◆</div>
+            <div class="corner-rune corner-bl">◆</div>
+            <div class="corner-rune corner-br">◆</div>
+
+            <div class="parchment-header">
+              <div class="parchment-seal">
+                <div class="seal-icon" data-realm-icon="crown"></div>
+                <div class="seal-meta">
+                  <h4>ROYAL ARCHIVES &bull; CODEX CYBER</h4>
+                  <span>SEALED BY ADITYA &bull; JECRC UNIVERSITY</span>
+                </div>
+              </div>
+
+              <!-- Interactive Decryptor Toggle -->
+              <button class="mode-toggle-btn" id="toggle-terminal-mode" aria-label="Toggle Cyber Terminal View">
+                <span>💻</span> [CYBER DECRYPTOR VIEW]
+              </button>
+            </div>
+
+            <!-- Standard Medieval Parchment Content -->
+            <div class="parchment-body" id="parchment-content-body">
+              <p>
+                I am Aditya, a first-year B.Tech Cyber Security student currently in my first semester at JECRC University, driven by curiosity about computers, technology, and the world of cybersecurity.
+              </p>
+              <p>
+                I believe that every digital system has a story, every vulnerability has a lesson, and every challenge is an opportunity to learn.
+              </p>
+              <p>
+                I am at the beginning of my journey, exploring the fundamentals of programming, networking, computer systems, and cybersecurity.
+              </p>
+              <p>
+                My ambition is to develop the knowledge and practical skills needed to understand digital threats and contribute to building a safer digital world.
+              </p>
+              <p>
+                I may be at the beginning of my journey, but my determination is already set.
+              </p>
+            </div>
+
+            <!-- Alternative Cyber Command Terminal View -->
+            <div class="terminal-view-wrap" id="cyber-terminal-view">
+              <div class="term-cmd">> whoami</div>
+              <div class="term-output">Aditya | B.Tech Cyber Security Student [Semester 1] @ JECRC University</div>
+
+              <div class="term-cmd">> cat /var/log/realm/mission.txt</div>
+              <div class="term-output">
+[ORIGIN] Aditya @ JECRC University — Driven by curiosity about computing architectures.
+[PRINCIPLE] Every digital system has a story; every vulnerability holds an invaluable lesson.
+[CURRENT SCOPE] Initializing fundamentals: C, Python, TCP/IP, Linux Kernel, Defensive Security.
+[END STATE] Safeguarding the realm of cyberspace through deep understanding and disciplined craft.
+              </div>
+
+              <div class="term-cmd">> status --determination</div>
+              <div class="term-output">[OK] Determination: ABSOLUTE. Journey Initialized.</div>
+            </div>
+
+            <!-- Medieval Quote Callout -->
+            <div class="medieval-quote-callout">
+              <p class="quote-text">"Power resides where men believe it resides."</p>
+              <p class="quote-author">— Lord Varys &bull; A Song of Ice and Fire</p>
+            </div>
+          </div>
+
+          <!-- Animated Information Cards Column -->
+          <div class="about-cards-column">
+            <!-- Card 01 -->
+            <div class="info-card">
+              <div class="info-card-num">01 — THE IDENTITY</div>
+              <h3 class="info-card-title">B.Tech Cyber Security Student</h3>
+              <p class="info-card-desc">
+                Enrolled in the foundational disciplines of computer engineering and cybersecurity, fortifying my mind with the core principles of defensive technologies.
+              </p>
+            </div>
+
+            <!-- Card 02 -->
+            <div class="info-card">
+              <div class="info-card-num">02 — THE CURRENT CHAPTER</div>
+              <h3 class="info-card-title">First Year | First Semester</h3>
+              <p class="info-card-desc">
+                Establishing the cornerstone of technical competence: computational logic, structured algorithms, digital systems, and network communication standards.
+              </p>
+            </div>
+
+            <!-- Card 03 -->
+            <div class="info-card">
+              <div class="info-card-num">03 — THE MISSION</div>
+              <h3 class="info-card-title">Learn. Explore. Secure.</h3>
+              <p class="info-card-desc">
+                To transform theoretical knowledge into resilient security defenses, contributing to an unbreachable future for the digital kingdoms.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 3: SKILLS SECTION — THE WEAPONS OF MY TRADE
+         ======================================================================== -->
+    <section class="realm-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">MY ARSENAL</span>
+          <h2 class="section-title gold-text-glow">THE WEAPONS OF MY TRADE</h2>
+          <p style="color:var(--text-secondary); margin-top:0.5rem; font-style:italic;">
+            "Every warrior must master their weapons."
+          </p>
+          <div class="medieval-divider">
+            <div class="medieval-divider-line"></div>
+            <div class="medieval-divider-rune">⚔️</div>
+            <div class="medieval-divider-line"></div>
+          </div>
+        </div>
+
+        <div class="arsenal-grid">
+          <!-- Category 1: PROGRAMMING -->
+          <div class="arsenal-card">
+            <div class="arsenal-card-header">
+              <div class="arsenal-badge-icon" data-realm-icon="code"></div>
+              <div class="arsenal-header-text">
+                <h3>PROGRAMMING</h3>
+                <span>HOUSE OF THE FORGE</span>
+              </div>
+            </div>
+
+            <div class="skills-list">
+              <!-- C Programming -->
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">
+                    <span data-realm-icon="swords"></span> C Programming
+                  </span>
+                  <span class="skill-tier-badge tier-learning">Learning</span>
+                </div>
+                <div class="skill-bar-wrap">
+                  <div class="skill-bar-fill" style="width: 45%;"></div>
+                </div>
+              </div>
+
+              <!-- Python -->
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">
+                    <span data-realm-icon="swords"></span> Python
+                  </span>
+                  <span class="skill-tier-badge tier-learning">Learning</span>
+                </div>
+                <div class="skill-bar-wrap">
+                  <div class="skill-bar-fill" style="width: 50%;"></div>
+                </div>
+              </div>
+
+              <!-- HTML -->
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">
+                    <span data-realm-icon="swords"></span> HTML
+                  </span>
+                  <span class="skill-tier-badge tier-learning">Learning</span>
+                </div>
+                <div class="skill-bar-wrap">
+                  <div class="skill-bar-fill" style="width: 55%;"></div>
+                </div>
+              </div>
+
+              <!-- CSS -->
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">
+                    <span data-realm-icon="swords"></span> CSS
+                  </span>
+                  <span class="skill-tier-badge tier-learning">Learning</span>
+                </div>
+                <div class="skill-bar-wrap">
+                  <div class="skill-bar-fill" style="width: 48%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: CYBERSECURITY -->
+          <div class="arsenal-card">
+            <div class="arsenal-card-header">
+              <div class="arsenal-badge-icon" data-realm-icon="shield"></div>
+              <div class="arsenal-header-text">
+                <h3>CYBERSECURITY</h3>
+                <span>HOUSE OF THE SHIELD</span>
+              </div>
+            </div>
+
+            <div class="skills-list">
+              <!-- Cybersecurity Fundamentals -->
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">
+                    <span data-realm-icon="lock"></span> Cyber Fundamentals
+                  </span>
+                  <span class="skill-tier-badge tier-exploring">Exploring</span>
+                </div>
+                <div class="skill-bar-wrap">
+                  <div class="skill-bar-fill" style="width: 40%;"></div>
+                </div>
+              </div>
+
+              <!-- Networking Fundamentals -->
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">
+                    <span data-realm-icon="network"></span> Networking Basics
+                  </span>
+                  <span class="skill-tier-badge tier-exploring">Exploring</span>
+                </div>
+                <div class="skill-bar-wrap">
+                  <div class="skill-bar-fill" style="width: 42%;"></div>
+                </div>
+              </div>
+
+              <!-- Linux Fundamentals -->
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">
+                    <span data-realm-icon="terminal"></span> Linux Fundamentals
+                  </span>
+                  <span class="skill-tier-badge tier-exploring">Exploring</span>
+                </div>
+                <div class="skill-bar-wrap">
+                  <div class="skill-bar-fill" style="width: 38%;"></div>
+                </div>
+              </div>
+
+              <!-- Ethical Hacking Concepts -->
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">
+                    <span data-realm-icon="crown"></span> Ethical Hacking
+                  </span>
+                  <span class="skill-tier-badge tier-exploring">Exploring</span>
+                </div>
+                <div class="skill-bar-wrap">
+                  <div class="skill-bar-fill" style="width: 35%;"></div>
+                </div>
+              </div>
+
+              <!-- Information Security Basics -->
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">
+                    <span data-realm-icon="scroll"></span> InfoSec Basics
+                  </span>
+                  <span class="skill-tier-badge tier-exploring">Exploring</span>
+                </div>
+                <div class="skill-bar-wrap">
+                  <div class="skill-bar-fill" style="width: 38%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: TOOLS & TECHNOLOGY -->
+          <div class="arsenal-card">
+            <div class="arsenal-card-header">
+              <div class="arsenal-badge-icon" data-realm-icon="terminal"></div>
+              <div class="arsenal-header-text">
+                <h3>TOOLS & TECH</h3>
+                <span>HOUSE OF THE APPARATUS</span>
+              </div>
+            </div>
+
+            <div class="skills-list">
+              <!-- Git & GitHub -->
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">
+                    <span data-realm-icon="github"></span> Git and GitHub
+                  </span>
+                  <span class="skill-tier-badge tier-exploring">Exploring</span>
+                </div>
+                <div class="skill-bar-wrap">
+                  <div class="skill-bar-fill" style="width: 42%;"></div>
+                </div>
+              </div>
+
+              <!-- VS Code -->
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">
+                    <span data-realm-icon="code"></span> VS Code
+                  </span>
+                  <span class="skill-tier-badge tier-familiar">Familiar</span>
+                </div>
+                <div class="skill-bar-wrap">
+                  <div class="skill-bar-fill" style="width: 60%;"></div>
+                </div>
+              </div>
+
+              <!-- Linux Terminal -->
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">
+                    <span data-realm-icon="terminal"></span> Linux Terminal
+                  </span>
+                  <span class="skill-tier-badge tier-learning">Learning</span>
+                </div>
+                <div class="skill-bar-wrap">
+                  <div class="skill-bar-fill" style="width: 45%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Authentic Learning Note -->
+            <div style="margin-top:auto; padding-top:1.5rem; border-top:1px dashed rgba(197,161,91,0.2); font-size:0.75rem; color:var(--text-muted); line-height:1.5;">
+              <span style="color:var(--gold-primary);">★ AUTHENTICITY PLEDGE:</span> In my first semester, skills are cataloged strictly by true learning progress rather than inflated claims.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 4: PROJECTS SECTION — BATTLES FOUGHT
+         ======================================================================== -->
+    <section class="realm-section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">MY BATTLES</span>
+          <h2 class="section-title gold-text-glow">EXPEDITIONS &amp; CONQUESTS</h2>
+          <p style="color:var(--text-secondary); margin-top:0.5rem; font-style:italic;">
+            "Every great journey begins with the first victory."
+          </p>
+          <div class="medieval-divider">
+            <div class="medieval-divider-line"></div>
+            <div class="medieval-divider-rune">🛡️</div>
+            <div class="medieval-divider-line"></div>
+          </div>
+        </div>
+
+        <div class="battles-grid">
+          <!-- PROJECT 01 -->
+          <div class="battle-card">
+            <div class="card-glare"></div>
+            <div class="battle-art-banner">
+              <div class="battle-art-grid-lines"></div>
+              <div class="battle-art-svg" data-realm-icon="lock"></div>
+              <div class="battle-status-tag status-planned">Learning / Planned</div>
+            </div>
+            <div class="battle-card-content">
+              <h3 class="battle-title">PROJECT 01: PYTHON PASSWORD GENERATOR</h3>
+              <p class="battle-desc">
+                A beginner Python project that generates random passwords using combinations of letters, numbers and special characters to fortify authentication against brute-force incursions.
+              </p>
+              <div class="tech-tags-list">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Entropy Logic</span>
+                <span class="tech-tag">Security Basics</span>
+              </div>
+              <div class="battle-footer">
+                <button class="btn-github-modal" data-open-project="password-generator">
+                  <span data-realm-icon="github"></span>
+                  <span>INSPECT REPO</span>
+                </button>
+                <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--gold-light);">#SIEGE-01</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 02 -->
+          <div class="battle-card">
+            <div class="card-glare"></div>
+            <div class="battle-art-banner">
+              <div class="battle-art-grid-lines"></div>
+              <div class="battle-art-svg" data-realm-icon="castle"></div>
+              <div class="battle-status-tag status-in-progress">In Progress</div>
+            </div>
+            <div class="battle-card-content">
+              <h3 class="battle-title">PROJECT 02: PERSONAL PORTFOLIO WEBSITE</h3>
+              <p class="battle-desc">
+                A personal portfolio website showcasing my academic journey, skills, interests and projects through a medieval fantasy-inspired design infused with cybersecurity command aesthetics.
+              </p>
+              <div class="tech-tags-list">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Web Audio API</span>
+              </div>
+              <div class="battle-footer">
+                <button class="btn-github-modal" data-open-project="portfolio-website">
+                  <span data-realm-icon="github"></span>
+                  <span>INSPECT REPO</span>
+                </button>
+                <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--gold-light);">#SIEGE-02</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 03 -->
+          <div class="battle-card">
+            <div class="card-glare"></div>
+            <div class="battle-art-banner">
+              <div class="battle-art-grid-lines"></div>
+              <div class="battle-art-svg" data-realm-icon="network"></div>
+              <div class="battle-status-tag status-planned">Planned</div>
+            </div>
+            <div class="battle-card-content">
+              <h3 class="battle-title">PROJECT 03: NETWORKING FUNDAMENTALS LAB</h3>
+              <p class="battle-desc">
+                An educational project documenting my understanding of IP addresses, networking concepts, protocols and basic network analysis through packet capture and route tracing.
+              </p>
+              <div class="tech-tags-list">
+                <span class="tech-tag">Networking Fundamentals</span>
+                <span class="tech-tag">Linux</span>
+                <span class="tech-tag">TCP/IP</span>
+              </div>
+              <div class="battle-footer">
+                <button class="btn-github-modal" data-open-project="networking-lab">
+                  <span data-realm-icon="github"></span>
+                  <span>INSPECT REPO</span>
+                </button>
+                <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--gold-light);">#SIEGE-03</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 04 -->
+          <div class="battle-card">
+            <div class="card-glare"></div>
+            <div class="battle-art-banner">
+              <div class="battle-art-grid-lines"></div>
+              <div class="battle-art-svg" data-realm-icon="scroll"></div>
+              <div class="battle-status-tag status-in-progress">In Progress</div>
+            </div>
+            <div class="battle-card-content">
+              <h3 class="battle-title">PROJECT 04: CYBERSECURITY LEARNING NOTES</h3>
+              <p class="battle-desc">
+                A structured collection of notes covering cybersecurity fundamentals, common digital threats, security practices and defensive concepts formatted as an ancient defense codex.
+              </p>
+              <div class="tech-tags-list">
+                <span class="tech-tag">Cybersecurity Fundamentals</span>
+                <span class="tech-tag">Markdown</span>
+                <span class="tech-tag">Documentation</span>
+              </div>
+              <div class="battle-footer">
+                <button class="btn-github-modal" data-open-project="learning-notes">
+                  <span data-realm-icon="github"></span>
+                  <span>INSPECT REPO</span>
+                </button>
+                <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--gold-light);">#SIEGE-04</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 5: JOURNEY SECTION — THE PATH TO THE IRON THRONE
+         ======================================================================== -->
+    <section class="realm-section" id="journey">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">THE ROYAL CHRONICLES</span>
+          <h2 class="section-title gold-text-glow">THE CHRONICLES OF MY JOURNEY</h2>
+          <p style="color:var(--text-secondary); margin-top:0.5rem; font-style:italic;">
+            "The path to the Iron Throne is forged in discipline, one step at a time."
+          </p>
+          <div class="medieval-divider">
+            <div class="medieval-divider-line"></div>
+            <div class="medieval-divider-rune">🏰</div>
+            <div class="medieval-divider-line"></div>
+          </div>
+        </div>
+
+        <div class="journey-timeline-wrap">
+          <!-- Golden Spine running down the middle -->
+          <div class="timeline-spine">
+            <div class="timeline-spine-fill" id="timeline-spine-fill"></div>
+          </div>
+
+          <!-- CHAPTER I -->
+          <div class="timeline-chapter-item">
+            <div class="chapter-card">
+              <div class="chapter-num">CHAPTER I</div>
+              <h3 class="chapter-title">THE AWAKENING</h3>
+              <p class="chapter-desc">
+                Started my B.Tech journey in Cyber Security at JECRC University. Marked the first pledge of allegiance to defending systems against uncharted threats.
+              </p>
+            </div>
+            <div class="chapter-milestone-node">
+              <div class="milestone-rune-circle" data-realm-icon="crown"></div>
+            </div>
+            <div class="chapter-spacer"></div>
+          </div>
+
+          <!-- CHAPTER II -->
+          <div class="timeline-chapter-item">
+            <div class="chapter-spacer"></div>
+            <div class="chapter-milestone-node">
+              <div class="milestone-rune-circle" data-realm-icon="scroll"></div>
+            </div>
+            <div class="chapter-card">
+              <div class="chapter-num">CHAPTER II</div>
+              <h3 class="chapter-title">THE FIRST STEP</h3>
+              <p class="chapter-desc">
+                Entered the first semester and began understanding the fundamentals of computer science and cybersecurity, decoding operating systems and computational logic.
+              </p>
+            </div>
+          </div>
+
+          <!-- CHAPTER III -->
+          <div class="timeline-chapter-item">
+            <div class="chapter-card">
+              <div class="chapter-num">CHAPTER III</div>
+              <h3 class="chapter-title">FORGING THE WEAPONS</h3>
+              <p class="chapter-desc">
+                Beginning to explore programming, Python, C, networking, Linux and essential technical tools, transforming theory into forged defensive instruments.
+              </p>
+            </div>
+            <div class="chapter-milestone-node">
+              <div class="milestone-rune-circle" data-realm-icon="swords"></div>
+            </div>
+            <div class="chapter-spacer"></div>
+          </div>
+
+          <!-- CHAPTER IV -->
+          <div class="timeline-chapter-item">
+            <div class="chapter-spacer"></div>
+            <div class="chapter-milestone-node">
+              <div class="milestone-rune-circle" data-realm-icon="castle"></div>
+            </div>
+            <div class="chapter-card">
+              <div class="chapter-num">CHAPTER IV</div>
+              <h3 class="chapter-title">THE FIRST BATTLES</h3>
+              <p class="chapter-desc">
+                Building beginner-level projects, experimenting with code and applying the concepts I learn in realistic testing chambers and personal repositories.
+              </p>
+            </div>
+          </div>
+
+          <!-- CHAPTER V -->
+          <div class="timeline-chapter-item">
+            <div class="chapter-card">
+              <div class="chapter-num">CHAPTER V</div>
+              <h3 class="chapter-title">THE ROAD AHEAD</h3>
+              <p class="chapter-desc">
+                My future goal is to strengthen my technical knowledge, explore ethical hacking, understand digital security and become a skilled cybersecurity professional.
+              </p>
+            </div>
+            <div class="chapter-milestone-node">
+              <div class="milestone-rune-circle" data-realm-icon="shield"></div>
+            </div>
+            <div class="chapter-spacer"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       SECTION 6: FOOTER — THE FINAL OATH
+       ======================================================================== -->
+  <footer class="realm-footer">
+    <!-- Animated Golden House Sigil -->
+    <div class="footer-sigil-wrap" data-realm-icon="crown"></div>
+
+    <blockquote class="footer-quote gold-text-glow">
+      "THE NIGHT IS DARK AND FULL OF TERRORS, BUT KNOWLEDGE IS MY LIGHT."
+    </blockquote>
+
+    <div class="footer-sub-quote">
+      Still learning. Still exploring. Still becoming.
+    </div>
+
+    <!-- Authentic Social Channel Links -->
+    <div class="footer-socials">
+      <a href="https://github.com/aditya2302-web" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Aditya's GitHub Profile">
+        <span data-realm-icon="github"></span>
+      </a>
+      <a href="mailto:aditya26bcon2441@jecrcu.edu.in" class="social-circle-btn" aria-label="Send Email to Aditya">
+        <span data-realm-icon="mail"></span>
+      </a>
+      <a href="#" class="social-circle-btn" data-open-contact aria-label="Terminal Dispatch">
+        <span data-realm-icon="terminal"></span>
+      </a>
+    </div>
+
+    <div class="footer-meta">
+      <div>&copy; 2026 Aditya &bull; B.Tech Cyber Security, JECRC University</div>
+      <button class="footer-back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+        <span>RETURN TO THE THRONE</span>
+        <span data-realm-icon="arrowUp" style="width:14px;height:14px;"></span>
+      </button>
+    </div>
+  </footer>
+
+  <!-- Floating Back-to-Top Button -->
+  <button id="back-to-top-btn" aria-label="Back to Top">
+    <span data-realm-icon="arrowUp"></span>
+  </button>
+
+  <!-- ========================================================================
+       FLOATING MEDIEVAL MUSIC CONTROLLER
+       ======================================================================== -->
+  <div class="floating-music-panel" id="floating-music-pill">
+    <!-- Play/Pause Toggle -->
+    <button class="audio-ctrl-btn" id="audio-play-btn" aria-label="Play Atmospheric Music">
+      <span data-realm-icon="play"></span>
+    </button>
+
+    <!-- Track Metadata & Status -->
+    <div class="audio-track-meta">
+      <div class="audio-track-title">Crown &amp; Cipher</div>
+      <div class="audio-track-status" id="audio-status-badge">ATMOSPHERIC SUITE</div>
+    </div>
+
+    <!-- Real-time Web Audio Visualizer Canvas -->
+    <canvas id="realm-audio-bars" width="70" height="22"></canvas>
+
+    <!-- Mute / Unmute Toggle -->
+    <button class="audio-ctrl-btn" id="audio-mute-btn" aria-label="Mute/Unmute">
+      <span data-realm-icon="volume2"></span>
+    </button>
+
+    <!-- Volume Slider -->
+    <div class="volume-slider-wrap">
+      <input type="range" id="audio-volume-slider" min="0" max="100" value="65" aria-label="Volume">
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       REUSABLE MODAL DIALOG (PROJECT DETAIL / DISPATCH INFO)
+       ======================================================================== -->
+  <div class="realm-modal-backdrop" id="realm-modal-backdrop">
+    <div class="realm-modal-window">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Dialog">
+        <span data-realm-icon="close"></span>
+      </button>
+      <div class="modal-header">
+        <div class="modal-subtitle" id="modal-subtitle">CHRONICLE RECORD</div>
+        <h3 class="modal-title gold-text-glow" id="modal-title">MODAL TITLE</h3>
+      </div>
+      <div class="modal-content" id="modal-body-content">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+    <!-- Self-Contained Interaction, Audio & Particle Engines -->
+  <script>
+/* --- ICONS ENGINE --- */
+/**
+ * THE REALM OF CYBER - Medieval Heraldic & Cyber Icon Library
+ * High-definition vector icons and House Sigils crafted for the cinematic experience.
+ */
+
+window.REALM_ICONS = {
+  // House Sigil: Stark (The Direwolf)
+  stark: `
+    <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 8 L60 22 L76 18 L70 34 L88 38 L76 50 L84 68 L68 64 L60 82 L50 72 L40 82 L32 64 L16 68 L24 50 L12 38 L30 34 L24 18 L40 22 Z" opacity="0.15" />
+      <path d="M50 14 L57 26 L70 24 L64 36 L78 40 L68 50 L74 64 L62 60 L56 74 L50 66 L44 74 L38 60 L26 64 L32 50 L22 40 L36 36 L30 24 L43 26 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M38 38 L44 42 M62 38 L56 42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M50 48 L46 56 L50 59 L54 56 Z" fill="currentColor"/>
+      <path d="M46 62 L50 68 L54 62" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="43" cy="40" r="1.5" fill="currentColor"/>
+      <circle cx="57" cy="40" r="1.5" fill="currentColor"/>
+    </svg>
+  `,
+
+  // House Sigil: Targaryen (The Three-Headed Dragon)
+  targaryen: `
+    <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="42" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 3" opacity="0.4"/>
+      <!-- Center Dragon Head -->
+      <path d="M50 18 L55 28 L51 34 L56 42 L50 48 L44 42 L49 34 L45 28 Z" fill="currentColor"/>
+      <!-- Left Dragon Head -->
+      <path d="M34 26 L42 32 L38 38 L43 45 L36 49 L32 42 L35 36 L28 32 Z" fill="currentColor"/>
+      <!-- Right Dragon Head -->
+      <path d="M66 26 L72 32 L65 36 L68 42 L64 49 L57 45 L62 38 L58 32 Z" fill="currentColor"/>
+      <!-- Dragon Wings & Ribs -->
+      <path d="M22 52 Q35 45 48 55 Q35 68 20 62 Q26 56 22 52 Z" fill="currentColor" opacity="0.8"/>
+      <path d="M78 52 Q65 45 52 55 Q65 68 80 62 Q74 56 78 52 Z" fill="currentColor" opacity="0.8"/>
+      <!-- Tail & Flame Spire -->
+      <path d="M50 56 Q46 68 50 82 Q54 68 50 56" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M48 82 L50 88 L52 82 Z" fill="currentColor"/>
+    </svg>
+  `,
+
+  // House Sigil: Lannister (The Golden Lion)
+  lannister: `
+    <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 10 L54 18 L62 14 L60 22 L68 22 L62 28 L68 34 L59 34 L62 44 L54 40 L50 50 L46 40 L38 44 L41 34 L32 34 L38 28 L32 22 L40 22 L38 14 L46 18 Z" opacity="0.2"/>
+      <!-- Crown -->
+      <path d="M42 22 L46 18 L50 23 L54 18 L58 22 L56 26 L44 26 Z" fill="currentColor"/>
+      <!-- Mane & Profile -->
+      <path d="M45 28 C48 24 58 24 62 30 C66 36 64 44 58 48 C62 52 64 60 60 70 C58 76 52 80 44 80 L38 80 C36 76 38 70 42 66 C40 60 38 52 42 46 C38 44 38 36 45 28 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M54 36 L59 38 L54 42" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <!-- Rampant Paw -->
+      <path d="M58 48 L68 44 L72 48 M68 44 L72 42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="51" cy="34" r="1.5" fill="currentColor"/>
+    </svg>
+  `,
+
+  // House: Night's Watch / Cyber Defense Shield
+  shieldCyber: `
+    <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <!-- Heater Shield Base -->
+      <path d="M50 12 L78 20 C78 52 66 74 50 88 C34 74 22 52 22 20 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+      <path d="M50 20 L72 26 C72 50 62 68 50 80 C38 68 28 50 28 26 Z" fill="currentColor" opacity="0.1"/>
+      <!-- Circuit Traces inside shield -->
+      <path d="M50 24 L50 42 M50 42 L38 50 L38 62 M50 42 L62 50 L62 62" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="38" cy="62" r="2.5" fill="currentColor"/>
+      <circle cx="62" cy="62" r="2.5" fill="currentColor"/>
+      <circle cx="50" cy="24" r="2.5" fill="currentColor"/>
+      <!-- Central Cryptographic Core -->
+      <rect x="44" y="38" width="12" height="12" rx="2" fill="currentColor" opacity="0.8"/>
+      <path d="M47 44 L53 44 M50 41 L50 47" stroke="#08090C" stroke-width="1.5"/>
+    </svg>
+  `,
+
+  // Iron Throne Graphic
+  ironThrone: `
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bladeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#C5A15B"/>
+          <stop offset="50%" stop-color="#8A682B"/>
+          <stop offset="100%" stop-color="#3A2E16"/>
+        </linearGradient>
+      </defs>
+      <!-- Central Back Spire Swords -->
+      <path d="M60 10 L63 50 L60 85 L57 50 Z" fill="url(#bladeGrad)"/>
+      <path d="M50 18 L55 52 L52 82 L47 52 Z" fill="url(#bladeGrad)" opacity="0.9"/>
+      <path d="M70 18 L73 52 L68 82 L65 52 Z" fill="url(#bladeGrad)" opacity="0.9"/>
+      <!-- Splaying Swords Left -->
+      <path d="M40 26 L48 55 L44 80 L36 55 Z" fill="url(#bladeGrad)" opacity="0.8"/>
+      <path d="M30 36 L42 60 L38 80 L26 60 Z" fill="url(#bladeGrad)" opacity="0.7"/>
+      <path d="M22 50 L36 68 L30 84 L16 68 Z" fill="url(#bladeGrad)" opacity="0.6"/>
+      <!-- Splaying Swords Right -->
+      <path d="M80 26 L84 55 L76 80 L72 55 Z" fill="url(#bladeGrad)" opacity="0.8"/>
+      <path d="M90 36 L94 60 L82 80 L78 60 Z" fill="url(#bladeGrad)" opacity="0.7"/>
+      <path d="M98 50 L104 68 L90 84 L84 68 Z" fill="url(#bladeGrad)" opacity="0.6"/>
+      <!-- Throne Seat & Armrests -->
+      <path d="M34 78 L86 78 L80 96 L40 96 Z" fill="#181B22" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M30 72 L42 78 L38 98 L26 92 Z" fill="#111318" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M90 72 L78 78 L82 98 L94 92 Z" fill="#111318" stroke="currentColor" stroke-width="1.5"/>
+      <!-- Base Stone Pedestal -->
+      <path d="M20 98 L100 98 L108 108 L12 108 Z" fill="#0E1015" stroke="currentColor" stroke-width="1.5"/>
+    </svg>
+  `,
+
+  // Ancient Scroll
+  scroll: `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8 21h12a2 2 0 0 0 2-2v-2H10v2a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v3h4"/>
+      <path d="M19 17V5a2 2 0 0 0-2-2H4"/>
+      <path d="M10 8h8"/>
+      <path d="M10 12h5"/>
+    </svg>
+  `,
+
+  // Crossed Swords
+  swords: `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/>
+      <line x1="13" y1="19" x2="19" y2="13"/>
+      <line x1="16" y1="16" x2="20" y2="20"/>
+      <line x1="19" y1="21" x2="21" y2="19"/>
+      <polyline points="14.5 6.5 18 3 21 3 21 6 17.5 9.5"/>
+      <line x1="5" y1="14" x2="11" y2="20"/>
+      <line x1="7" y1="17" x2="4" y2="20"/>
+      <line x1="3" y1="19" x2="5" y2="21"/>
+    </svg>
+  `,
+
+  // Shield
+  shield: `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    </svg>
+  `,
+
+  // Terminal
+  terminal: `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="4 17 10 11 4 5"/>
+      <line x1="12" y1="19" x2="20" y2="19"/>
+    </svg>
+  `,
+
+  // Fortress / Castle
+  castle: `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 21h18"/>
+      <path d="M5 21V7l2-2 2 2v14"/>
+      <path d="M15 21V7l2-2 2 2v14"/>
+      <path d="M9 11h6v10H9z"/>
+      <path d="M9 7V4l3-2 3 2v3"/>
+      <path d="M11 15v2h2v-2z"/>
+    </svg>
+  `,
+
+  // Code Dagger
+  code: `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="16 18 22 12 16 6"/>
+      <polyline points="8 6 2 12 8 18"/>
+      <line x1="12" y1="2" x2="12" y2="22"/>
+    </svg>
+  `,
+
+  // Network Nodes
+  network: `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="5" r="3"/>
+      <circle cx="6" cy="19" r="3"/>
+      <circle cx="18" cy="19" r="3"/>
+      <line x1="12" y1="8" x2="6" y2="16"/>
+      <line x1="12" y1="8" x2="18" y2="16"/>
+      <line x1="9" y1="19" x2="15" y2="19"/>
+    </svg>
+  `,
+
+  // Crown
+  crown: `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/>
+    </svg>
+  `,
+
+  // Lock
+  lock: `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+    </svg>
+  `,
+
+  // Flame
+  flame: `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+    </svg>
+  `,
+
+  // Snowflake
+  snowflake: `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="2" x2="12" y2="22"/>
+      <path d="m20 16-4-4 4-4"/>
+      <path d="m4 8 4 4-4 4"/>
+      <path d="m16 4-4 4-4-4"/>
+      <path d="m8 20 4-4 4 4"/>
+    </svg>
+  `,
+
+  // Sparkles
+  sparkles: `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+    </svg>
+  `,
+
+  // Media Controls
+  play: `<svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg>`,
+  pause: `<svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>`,
+  volume2: `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+    </svg>
+  `,
+  volumeX: `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+      <line x1="23" y1="9" x2="17" y2="15"/>
+      <line x1="17" y1="9" x2="23" y2="15"/>
+    </svg>
+  `,
+
+  // Socials & Navigation
+  github: `
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+    </svg>
+  `,
+  linkedin: `
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.68 1.68 0 1 0 0-3.36 1.68 1.68 0 0 0 0 3.36m1.39 9.74v-8.37H5.07v8.37h2.78z"/>
+    </svg>
+  `,
+  mail: `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect width="20" height="16" x="2" y="4" rx="2"/>
+      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+    </svg>
+  `,
+  externalLink: `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+      <polyline points="15 3 21 3 21 9"/>
+      <line x1="10" y1="14" x2="21" y2="3"/>
+    </svg>
+  `,
+  chevronDown: `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"/>
+    </svg>
+  `,
+  arrowUp: `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="19" x2="12" y2="5"/>
+      <polyline points="5 12 12 5 19 12"/>
+    </svg>
+  `,
+  menu: `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  `,
+  close: `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  `
+};
+
+// Helper to inject icons into elements with data-icon attribute
+function renderRealmIcons() {
+  document.querySelectorAll('[data-realm-icon]').forEach(el => {
+    const iconName = el.getAttribute('data-realm-icon');
+    if (window.REALM_ICONS && window.REALM_ICONS[iconName]) {
+      el.innerHTML = window.REALM_ICONS[iconName];
+    }
+  });
+}
+window.renderRealmIcons = renderRealmIcons;
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', renderRealmIcons);
+} else {
+  renderRealmIcons();
+}
+
+
+/* --- PROCEDURAL AUDIO ENGINE --- */
+/**
+ * THE REALM OF CYBER - Medieval Cinematic Audio Engine
+ * 100% Original Royalty-Free Procedural Medieval Fantasy Orchestral Suite
+ * Powered by Web Audio API with real-time frequency analyser.
+ */
+
+class RealmAudioEngine {
+  constructor() {
+    this.ctx = null;
+    this.isPlaying = false;
+    this.isMuted = false;
+    let savedVol = '0.65';
+    try {
+      savedVol = localStorage.getItem('realm_audio_vol') || '0.65';
+    } catch (e) {
+      savedVol = '0.65';
+    }
+    this.volume = parseFloat(savedVol);
+    this.analyser = null;
+    this.masterGain = null;
+    this.timer = null;
+    this.step = 0;
+    this.visualizerCanvas = null;
+    this.visualizerCtx = null;
+    this.animFrameId = null;
+
+    // Track metadata
+    this.trackInfo = {
+      title: "Crown & Cipher",
+      subtitle: "Medieval Cyber Fantasy Suite (Procedural Orchestra)",
+      composer: "Realm of Cyber Audio Core"
+    };
+
+    // Melody notes (A Dorian / Aeolian medieval mode)
+    // A2, C3, D3, E3, G3, A3, B3, C4, D4, E4
+    this.scale = [110.00, 130.81, 146.83, 164.81, 196.00, 220.00, 246.94, 261.63, 293.66, 329.63];
+    this.melodySequence = [0, 2, 3, 5, 4, 3, 2, 0, 3, 5, 7, 8, 7, 5, 4, 2];
+    
+    // Chord roots (A -> F -> G -> Em)
+    this.chordProgression = [55.0, 43.65, 49.00, 41.20];
+    this.currentChord = 0;
+  }
+
+  init() {
+    if (this.ctx) return;
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContext) {
+      console.warn("Web Audio API not supported in this browser.");
+      return;
+    }
+    this.ctx = new AudioContext();
+
+    // Master Gain
+    this.masterGain = this.ctx.createGain();
+    this.masterGain.gain.setValueAtTime(this.volume, this.ctx.currentTime);
+
+    // Dynamic Compressor for cinematic polish
+    this.compressor = this.ctx.createDynamicsCompressor();
+    this.compressor.threshold.setValueAtTime(-24, this.ctx.currentTime);
+    this.compressor.knee.setValueAtTime(30, this.ctx.currentTime);
+    this.compressor.ratio.setValueAtTime(12, this.ctx.currentTime);
+    this.compressor.attack.setValueAtTime(0.003, this.ctx.currentTime);
+    this.compressor.release.setValueAtTime(0.25, this.ctx.currentTime);
+
+    // Analyser for real-time visualizer
+    this.analyser = this.ctx.createAnalyser();
+    this.analyser.fftSize = 64;
+    this.analyser.smoothingTimeConstant = 0.85;
+
+    // Convolver / Reverb Simulation using noise impulse
+    this.reverbNode = this.createSyntheticReverb(2.5, 2.0);
+
+    // Wiring
+    this.masterGain.connect(this.compressor);
+    this.compressor.connect(this.analyser);
+    this.analyser.connect(this.ctx.destination);
+
+    // Setup visualizer if canvas is present
+    this.setupVisualizer();
+  }
+
+  createSyntheticReverb(duration, decay) {
+    const rate = this.ctx.sampleRate;
+    const length = rate * duration;
+    const impulse = this.ctx.createBuffer(2, length, rate);
+    const left = impulse.getChannelData(0);
+    const right = impulse.getChannelData(1);
+
+    for (let i = 0; i < length; i++) {
+      const n = i / length;
+      const dec = Math.pow(1 - n, decay);
+      left[i] = (Math.random() * 2 - 1) * dec;
+      right[i] = (Math.random() * 2 - 1) * dec;
+    }
+
+    const convolver = this.ctx.createConvolver();
+    convolver.buffer = impulse;
+    return convolver;
+  }
+
+  start() {
+    if (!this.ctx) this.init();
+    if (this.ctx && this.ctx.state === 'suspended') {
+      this.ctx.resume();
+    }
+    if (this.isPlaying) return;
+
+    this.isPlaying = true;
+    this.masterGain.gain.setValueAtTime(this.isMuted ? 0 : this.volume, this.ctx.currentTime);
+
+    // Play drone
+    this.startDronePad();
+
+    // Start rhythmic loop (War drums + Medieval harp/lute)
+    // 72 BPM -> each beat is ~833ms, 16th note is ~208ms
+    const stepDuration = 416; // 8th note
+    this.timer = setInterval(() => {
+      if (!this.isPlaying) return;
+      this.playStep(this.step);
+      this.step = (this.step + 1) % 32;
+    }, stepDuration);
+
+    this.updateUI();
+    this.renderVisualizer();
+  }
+
+  stop() {
+    this.isPlaying = false;
+    if (this.timer) {
+      clearInterval(this.timer);
+      this.timer = null;
+    }
+    if (this.droneOsc1) {
+      try { this.droneOsc1.stop(); this.droneOsc2.stop(); } catch(e){}
+    }
+    this.updateUI();
+  }
+
+  toggle() {
+    if (this.isPlaying) {
+      this.stop();
+    } else {
+      this.start();
+    }
+  }
+
+  setVolume(val) {
+    this.volume = Math.max(0, Math.min(1, val));
+    try {
+      localStorage.setItem('realm_audio_vol', this.volume);
+    } catch(e) {}
+    if (this.masterGain && !this.isMuted) {
+      this.masterGain.gain.setValueAtTime(this.volume, this.ctx.currentTime);
+    }
+    this.updateUI();
+  }
+
+  toggleMute() {
+    this.isMuted = !this.isMuted;
+    if (this.masterGain) {
+      this.masterGain.gain.setValueAtTime(this.isMuted ? 0 : this.volume, this.ctx.currentTime);
+    }
+    this.updateUI();
+  }
+
+  // --- SOUND GENERATORS ---
+
+  // Deep Cello / Bass Drone
+  startDronePad() {
+    if (!this.ctx) return;
+    const now = this.ctx.currentTime;
+
+    // Osc 1 - Saw filtered
+    this.droneOsc1 = this.ctx.createOscillator();
+    this.droneOsc1.type = 'sawtooth';
+    this.droneOsc1.frequency.setValueAtTime(55, now); // A1
+
+    // Osc 2 - Triangle sub
+    this.droneOsc2 = this.ctx.createOscillator();
+    this.droneOsc2.type = 'triangle';
+    this.droneOsc2.frequency.setValueAtTime(110, now); // A2
+
+    // Filter
+    this.droneFilter = this.ctx.createBiquadFilter();
+    this.droneFilter.type = 'lowpass';
+    this.droneFilter.frequency.setValueAtTime(260, now);
+    this.droneFilter.Q.setValueAtTime(3, now);
+
+    // Drone Gain
+    this.droneGain = this.ctx.createGain();
+    this.droneGain.gain.setValueAtTime(0.01, now);
+    this.droneGain.gain.linearRampToValueAtTime(0.35, now + 3);
+
+    this.droneOsc1.connect(this.droneFilter);
+    this.droneOsc2.connect(this.droneFilter);
+    this.droneFilter.connect(this.droneGain);
+    this.droneGain.connect(this.masterGain);
+    if (this.reverbNode) {
+      this.droneGain.connect(this.reverbNode);
+      this.reverbNode.connect(this.masterGain);
+    }
+
+    this.droneOsc1.start(now);
+    this.droneOsc2.start(now);
+  }
+
+  // War Drum Beat (Deep Taiko Impact)
+  playWarDrum(isHeavy = false) {
+    if (!this.ctx) return;
+    const now = this.ctx.currentTime;
+
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+
+    osc.type = 'sine';
+    const startFreq = isHeavy ? 130 : 110;
+    const endFreq = isHeavy ? 35 : 42;
+    osc.frequency.setValueAtTime(startFreq, now);
+    osc.frequency.exponentialRampToValueAtTime(endFreq, now + 0.18);
+
+    const initialGain = isHeavy ? 0.75 : 0.45;
+    gain.gain.setValueAtTime(initialGain, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + (isHeavy ? 0.8 : 0.5));
+
+    // Lowpass body filter
+    const filter = this.ctx.createBiquadFilter();
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(220, now);
+
+    osc.connect(filter);
+    filter.connect(gain);
+    gain.connect(this.masterGain);
+
+    osc.start(now);
+    osc.stop(now + 0.85);
+  }
+
+  // Lute / Harp Pluck (Medieval Court Arpeggio)
+  playPluck(freq, velocity = 0.25) {
+    if (!this.ctx) return;
+    const now = this.ctx.currentTime;
+
+    const osc = this.ctx.createOscillator();
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(freq, now);
+
+    // Subtle pitch vibrato for medieval string character
+    const vib = this.ctx.createOscillator();
+    const vibGain = this.ctx.createGain();
+    vib.frequency.setValueAtTime(4.5, now);
+    vibGain.gain.setValueAtTime(2.0, now);
+    vib.connect(osc.frequency);
+    vib.start(now);
+    vib.stop(now + 1.2);
+
+    const gain = this.ctx.createGain();
+    gain.gain.setValueAtTime(0.001, now);
+    gain.gain.linearRampToValueAtTime(velocity, now + 0.015);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 1.1);
+
+    const filter = this.ctx.createBiquadFilter();
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(1400, now);
+    filter.frequency.exponentialRampToValueAtTime(400, now + 0.6);
+
+    osc.connect(filter);
+    filter.connect(gain);
+    gain.connect(this.masterGain);
+    if (this.reverbNode) {
+      gain.connect(this.reverbNode);
+    }
+
+    osc.start(now);
+    osc.stop(now + 1.2);
+  }
+
+  // Sequencer step callback
+  playStep(step) {
+    // War Drum pattern on beats 0, 8, 16, 24 with accents
+    if (step === 0) {
+      this.playWarDrum(true);
+      // Shift chord progression every 16 steps
+      this.currentChord = (this.currentChord + 1) % this.chordProgression.length;
+      if (this.droneOsc1) {
+        const root = this.chordProgression[this.currentChord];
+        const now = this.ctx.currentTime;
+        this.droneOsc1.frequency.exponentialRampToValueAtTime(root, now + 2);
+        this.droneOsc2.frequency.exponentialRampToValueAtTime(root * 2, now + 2);
+      }
+    } else if (step === 8 || step === 16 || step === 24) {
+      this.playWarDrum(false);
+    } else if (step === 22 || step === 30) {
+      // Subtle war-drum flam / syncopation
+      this.playWarDrum(false);
+    }
+
+    // Melodic medieval arpeggio on certain steps
+    if (step % 2 === 0) {
+      const melIndex = this.melodySequence[(step / 2) % this.melodySequence.length];
+      const freq = this.scale[melIndex % this.scale.length];
+      this.playPluck(freq, 0.22);
+    }
+  }
+
+  // --- VISUALIZER & UI ---
+  setupVisualizer() {
+    this.visualizerCanvas = document.getElementById('realm-audio-bars');
+    if (this.visualizerCanvas) {
+      this.visualizerCtx = this.visualizerCanvas.getContext('2d');
+    }
+  }
+
+  renderVisualizer() {
+    if (!this.isPlaying) {
+      if (this.visualizerCtx && this.visualizerCanvas) {
+        this.visualizerCtx.clearRect(0, 0, this.visualizerCanvas.width, this.visualizerCanvas.height);
+        // Draw resting idle bars
+        const numBars = 16;
+        const barWidth = 3;
+        const gap = 3;
+        const totalW = numBars * (barWidth + gap);
+        const startX = (this.visualizerCanvas.width - totalW) / 2;
+        this.visualizerCtx.fillStyle = 'rgba(197, 161, 91, 0.25)';
+        for (let i = 0; i < numBars; i++) {
+          this.visualizerCtx.fillRect(startX + i * (barWidth + gap), this.visualizerCanvas.height - 4, barWidth, 4);
+        }
+      }
+      return;
+    }
+
+    this.animFrameId = requestAnimationFrame(() => this.renderVisualizer());
+    if (!this.analyser || !this.visualizerCtx || !this.visualizerCanvas) return;
+
+    const bufferLength = this.analyser.frequencyBinCount;
+    const dataArray = new Uint8Array(bufferLength);
+    this.analyser.getByteFrequencyData(dataArray);
+
+    const canvas = this.visualizerCanvas;
+    const ctx = this.visualizerCtx;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const numBars = 16;
+    const barWidth = 3;
+    const gap = 3;
+    const totalW = numBars * (barWidth + gap);
+    const startX = (canvas.width - totalW) / 2;
+
+    for (let i = 0; i < numBars; i++) {
+      const val = dataArray[i * 2] || 0;
+      const percent = val / 255;
+      const barH = Math.max(3, percent * (canvas.height - 4));
+      const y = canvas.height - barH;
+
+      // Golden gradient
+      const grad = ctx.createLinearGradient(0, y, 0, canvas.height);
+      grad.addColorStop(0, '#FFE494');
+      grad.addColorStop(1, '#8F7238');
+
+      ctx.fillStyle = grad;
+      ctx.fillRect(startX + i * (barWidth + gap), y, barWidth, barH);
+    }
+  }
+
+  updateUI() {
+    const playBtn = document.getElementById('audio-play-btn');
+    const muteBtn = document.getElementById('audio-mute-btn');
+    const volSlider = document.getElementById('audio-volume-slider');
+    const badge = document.getElementById('audio-status-badge');
+    const floatingPill = document.getElementById('floating-music-pill');
+
+    if (playBtn) {
+      playBtn.innerHTML = this.isPlaying 
+        ? window.REALM_ICONS.pause 
+        : window.REALM_ICONS.play;
+      playBtn.setAttribute('aria-label', this.isPlaying ? 'Pause Music' : 'Play Music');
+    }
+
+    if (muteBtn) {
+      muteBtn.innerHTML = this.isMuted 
+        ? window.REALM_ICONS.volumeX 
+        : window.REALM_ICONS.volume2;
+    }
+
+    if (volSlider) {
+      volSlider.value = this.volume * 100;
+    }
+
+    if (badge) {
+      badge.textContent = this.isPlaying ? "NOW PLAYING" : "ATMOSPHERIC SUITE";
+      badge.classList.toggle('playing', this.isPlaying);
+    }
+
+    if (floatingPill) {
+      floatingPill.classList.toggle('active', this.isPlaying);
+    }
+  }
+}
+
+// Global instance
+window.realmAudio = new RealmAudioEngine();
+
+
+/* --- CANVAS PARTICLE ENGINE --- */
+/**
+ * THE REALM OF CYBER - Atmospheric Canvas Particle Engine
+ * Handles Falling Snow, Floating Embers, and Royal Gold Dust
+ * dynamically tied to the visitor's selected Great House.
+ */
+
+class RealmParticleEngine {
+  constructor(canvasId) {
+    this.canvas = document.getElementById(canvasId);
+    if (!this.canvas) return;
+    this.ctx = this.canvas.getContext('2d');
+    this.particles = [];
+    this.width = window.innerWidth;
+    this.height = window.innerHeight;
+    this.mouse = { x: -1000, y: -1000, radius: 120 };
+    
+    // Modes: 'snow' (Stark), 'embers' (Targaryen), 'gold' (Lannister), 'cyber' (Night's Watch)
+    this.currentMode = 'snow';
+    this.particleCount = 75;
+    this.animId = null;
+    this.isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    this.init();
+  }
+
+  init() {
+    this.resize();
+    window.addEventListener('resize', () => this.resize());
+    window.addEventListener('mousemove', (e) => {
+      this.mouse.x = e.clientX;
+      this.mouse.y = e.clientY;
+    });
+
+    this.spawnParticles();
+    this.animate();
+  }
+
+  resize() {
+    this.width = this.canvas.width = window.innerWidth;
+    this.height = this.canvas.height = window.innerHeight;
+    // Adapt particle count for mobile screens
+    if (this.width < 768) {
+      this.particleCount = 35;
+    } else {
+      this.particleCount = 75;
+    }
+    this.spawnParticles();
+  }
+
+  setMode(mode) {
+    if (this.currentMode === mode) return;
+    this.currentMode = mode;
+    this.spawnParticles();
+  }
+
+  createParticle() {
+    const x = Math.random() * this.width;
+    const y = Math.random() * this.height;
+
+    switch (this.currentMode) {
+      case 'embers': // House Targaryen: Red/Orange Embers rising
+        return {
+          x,
+          y: y > this.height ? this.height : y,
+          size: Math.random() * 3.5 + 1.2,
+          speedY: -(Math.random() * 1.5 + 0.6), // float upwards
+          speedX: (Math.random() - 0.5) * 1.0,
+          opacity: Math.random() * 0.7 + 0.3,
+          color: Math.random() > 0.4 ? '#E63946' : '#FF9F1C',
+          glow: 'rgba(230, 57, 70, 0.6)',
+          flicker: Math.random() * 0.05 + 0.02,
+          life: Math.random() * 100,
+          maxLife: 150 + Math.random() * 100
+        };
+
+      case 'gold': // House Lannister: Golden motes & regal dust
+        return {
+          x,
+          y,
+          size: Math.random() * 3 + 1,
+          speedY: (Math.random() - 0.5) * 0.5,
+          speedX: (Math.random() - 0.5) * 0.6,
+          opacity: Math.random() * 0.65 + 0.25,
+          color: Math.random() > 0.3 ? '#C5A15B' : '#FFE28A',
+          glow: 'rgba(197, 161, 91, 0.5)',
+          flicker: Math.random() * 0.03,
+          life: Math.random() * 100,
+          maxLife: 200
+        };
+
+      case 'cyber': // Night's Watch: Cyber Frost & Cyan Sparks
+        return {
+          x,
+          y,
+          size: Math.random() * 2.8 + 1,
+          speedY: Math.random() * 0.8 + 0.3,
+          speedX: (Math.random() - 0.5) * 0.4,
+          opacity: Math.random() * 0.8 + 0.2,
+          color: Math.random() > 0.5 ? '#00F0FF' : '#9BC7DF',
+          glow: 'rgba(0, 240, 255, 0.5)',
+          flicker: Math.random() * 0.04,
+          life: Math.random() * 100,
+          maxLife: 180,
+          isGlyph: Math.random() > 0.7,
+          glyph: Math.random() > 0.5 ? '1' : '0'
+        };
+
+      case 'snow': // House Stark: Snowflakes falling softly
+      default:
+        return {
+          x,
+          y,
+          size: Math.random() * 3 + 1.2,
+          speedY: Math.random() * 1.2 + 0.4, // falls downwards
+          speedX: (Math.random() - 0.5) * 0.8 + 0.2, // slight wind drift
+          opacity: Math.random() * 0.7 + 0.25,
+          color: Math.random() > 0.5 ? '#FFFFFF' : '#9BC7DF',
+          glow: 'rgba(155, 199, 223, 0.4)',
+          flicker: 0,
+          life: 0,
+          maxLife: 500
+        };
+    }
+  }
+
+  spawnParticles() {
+    this.particles = [];
+    if (this.isReducedMotion) return;
+    for (let i = 0; i < this.particleCount; i++) {
+      this.particles.push(this.createParticle());
+    }
+  }
+
+  animate() {
+    if (this.isReducedMotion) return;
+    this.ctx.clearRect(0, 0, this.width, this.height);
+
+    for (let i = 0; i < this.particles.length; i++) {
+      const p = this.particles[i];
+
+      // Update positions
+      p.x += p.speedX;
+      p.y += p.speedY;
+
+      // Mouse gentle interaction
+      const dx = this.mouse.x - p.x;
+      const dy = this.mouse.y - p.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < this.mouse.radius) {
+        const force = (this.mouse.radius - dist) / this.mouse.radius;
+        const angle = Math.atan2(dy, dx);
+        p.x -= Math.cos(angle) * force * 1.5;
+        p.y -= Math.sin(angle) * force * 1.5;
+      }
+
+      // Mode-specific reset boundaries
+      if (this.currentMode === 'embers') {
+        p.life++;
+        p.opacity = Math.sin((p.life / p.maxLife) * Math.PI) * 0.8;
+        if (p.y < -10 || p.life >= p.maxLife) {
+          this.particles[i] = this.createParticle();
+          this.particles[i].y = this.height + 10;
+        }
+      } else {
+        if (p.y > this.height + 10) {
+          p.y = -10;
+          p.x = Math.random() * this.width;
+        } else if (p.y < -10) {
+          p.y = this.height + 10;
+        }
+        if (p.x > this.width + 10) {
+          p.x = -10;
+        } else if (p.x < -10) {
+          p.x = this.width + 10;
+        }
+      }
+
+      // Draw particle
+      this.ctx.save();
+      this.ctx.globalAlpha = Math.max(0, Math.min(1, p.opacity));
+
+      if (p.isGlyph) {
+        this.ctx.fillStyle = p.color;
+        this.ctx.font = '10px monospace';
+        this.ctx.fillText(p.glyph, p.x, p.y);
+      } else {
+        this.ctx.fillStyle = p.color;
+        this.ctx.shadowBlur = 6;
+        this.ctx.shadowColor = p.glow;
+        this.ctx.beginPath();
+        this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        this.ctx.fill();
+      }
+      this.ctx.restore();
+    }
+
+    this.animId = requestAnimationFrame(() => this.animate());
+  }
+}
+
+// Global initialization
+function initParticles() {
+  if (!window.realmParticles) {
+    window.realmParticles = new RealmParticleEngine('realm-particles-canvas');
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initParticles);
+} else {
+  initParticles();
+}
+
+
+/* --- MASTER APPLICATION LOGIC --- */
+/**
+ * THE REALM OF CYBER — Master Interaction Engine
+ * Handles Cinematic Preloader, House Switching, 3D Card Tilt,
+ * Scroll Spy, Interactive Terminal/Parchment Decryptor, and Modals.
+ */
+
+// Safe Storage Helper to prevent SecurityError on file:// or private windows
+const safeStorage = {
+  get: (key, fallback = null) => {
+    try {
+      return localStorage.getItem(key) || fallback;
+    } catch(e) {
+      return fallback;
+    }
+  },
+  set: (key, val) => {
+    try {
+      localStorage.setItem(key, val);
+    } catch(e) {}
+  }
+};
+
+function initApp() {
+  // 1. CINEMATIC PRELOADER
+  initPreloader();
+
+  // 2. CHOOSE YOUR HOUSE ENGINE
+  initHouseSelector();
+
+  // 3. NAVIGATION, SCROLL SPY & PROGRESS BAR
+  initNavigation();
+
+  // 4. PARCHMENT <-> CYBER TERMINAL DECRYPTOR TOGGLE
+  initTerminalToggle();
+
+  // 5. 3D TILT EFFECT ON CARDS
+  init3DCardTilt();
+
+  // 6. TORCHLIGHT SPOTLIGHT CURSOR FOLLOWER
+  initTorchlightFollower();
+
+  // 7. MODALS & INTERACTIVE DIALOGS
+  initModals();
+
+  // 8. AUDIO CONTROLLER BINDINGS
+  initAudioControls();
+
+  // 9. AUTOMATIC SOUNDTRACK ON NAVIGATION & FIRST GESTURE
+  initAutoplayOnNavigation();
+}
+
+/* ==========================================================================
+   0. AUTOMATIC SOUNDTRACK ON NAVIGATION
+   ========================================================================== */
+function initAutoplayOnNavigation() {
+  const startMusic = () => {
+    if (window.realmAudio && !window.realmAudio.isPlaying) {
+      window.realmAudio.start();
+    }
+  };
+
+  // Trigger on click, scroll, touch, or key navigation
+  ['click', 'touchstart', 'scroll', 'keydown', 'wheel'].forEach(evt => {
+    window.addEventListener(evt, startMusic, { once: true, passive: true });
+    document.addEventListener(evt, startMusic, { once: true, passive: true });
+  });
+}
+
+// Run immediately if DOM is already ready, or on DOMContentLoaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
+
+// Backup window load trigger to guarantee preloader is dismissed
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('realm-preloader');
+  if (preloader) {
+    preloader.classList.add('loaded');
+  }
+});
+
+/* ==========================================================================
+   1. PRELOADER
+   ========================================================================== */
+function initPreloader() {
+  const preloader = document.getElementById('realm-preloader');
+  if (!preloader) return;
+
+  // Click anywhere to dismiss immediately
+  preloader.addEventListener('click', () => {
+    preloader.classList.add('loaded');
+  });
+
+  const titleEl = document.getElementById('preloader-title');
+  if (titleEl) {
+    const rawText = "THE REALM OF CYBER";
+    titleEl.innerHTML = '';
+    rawText.split('').forEach((char, index) => {
+      const span = document.createElement('span');
+      span.textContent = char === ' ' ? '\u00A0' : char;
+      span.style.animationDelay = `${index * 0.04 + 0.1}s`;
+      titleEl.appendChild(span);
+    });
+  }
+
+  // Guarantee fade out after 1.5 seconds
+  setTimeout(() => {
+    preloader.classList.add('loaded');
+  }, 1500);
+}
+
+/* ==========================================================================
+   2. CHOOSE YOUR HOUSE ENGINE
+   ========================================================================== */
+const HOUSES = {
+  stark: {
+    id: 'stark',
+    name: 'House Stark',
+    motto: 'Winter Is Coming',
+    tagline: 'Discipline & Resilience',
+    particleMode: 'snow',
+    icon: 'stark'
+  },
+  targaryen: {
+    id: 'targaryen',
+    name: 'House Targaryen',
+    motto: 'Fire and Blood',
+    tagline: 'Ambition & Power',
+    particleMode: 'embers',
+    icon: 'targaryen'
+  },
+  lannister: {
+    id: 'lannister',
+    name: 'House Lannister',
+    motto: 'Hear Me Roar',
+    tagline: 'Strategy & Intelligence',
+    particleMode: 'gold',
+    icon: 'lannister'
+  },
+  nightswatch: {
+    id: 'nightswatch',
+    name: 'The Night\'s Watch',
+    motto: 'Sword in the Darkness',
+    tagline: 'Defenders of the Realm',
+    particleMode: 'cyber',
+    icon: 'shieldCyber'
+  }
+};
+
+function initHouseSelector() {
+  const savedHouse = safeStorage.get('realm_house', 'stark');
+  applyHouse(savedHouse, false);
+
+  const houseButtons = document.querySelectorAll('.house-card-btn');
+  houseButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const houseId = btn.getAttribute('data-house-id');
+      if (houseId && HOUSES[houseId]) {
+        applyHouse(houseId, true);
+      }
+    });
+  });
+}
+
+function applyHouse(houseId, animateToast = true) {
+  const house = HOUSES[houseId] || HOUSES.stark;
+  document.body.setAttribute('data-house', house.id);
+  safeStorage.set('realm_house', house.id);
+
+  // Update active state in buttons
+  document.querySelectorAll('.house-card-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-house-id') === house.id);
+  });
+
+  // Update particle engine if initialized
+  if (window.realmParticles) {
+    window.realmParticles.setMode(house.particleMode);
+  }
+
+  // Update nav sigil icon
+  const navSigil = document.getElementById('nav-house-sigil');
+  if (navSigil && window.REALM_ICONS && window.REALM_ICONS[house.icon]) {
+    navSigil.innerHTML = window.REALM_ICONS[house.icon];
+  }
+
+  // Update Hero Tagline
+  const heroTagline = document.getElementById('hero-house-motto');
+  if (heroTagline) {
+    heroTagline.textContent = `House Banner: ${house.motto} — ${house.tagline}`;
+  }
+
+  // Optional toast feedback
+  if (animateToast) {
+    showToast(`Allegiance pledged to ${house.name}: "${house.motto}"`);
+  }
+}
+
+/* ==========================================================================
+   3. NAVIGATION, SCROLL SPY & SCROLL PROGRESS
+   ========================================================================== */
+function initNavigation() {
+  const nav = document.getElementById('realm-nav');
+  const scrollBar = document.getElementById('scroll-progress');
+  const backToTopBtn = document.getElementById('back-to-top-btn');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('section[id]');
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileDrawer = document.getElementById('mobile-nav-drawer');
+  const mobileDrawerClose = document.getElementById('mobile-drawer-close');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+  // Window scroll handler
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
+
+    // Progress bar width
+    if (scrollBar) {
+      scrollBar.style.width = `${progress}%`;
+    }
+
+    // Nav elevation class
+    if (nav) {
+      nav.classList.toggle('scrolled', scrollY > 60);
+    }
+
+    // Back to top button visibility
+    if (backToTopBtn) {
+      backToTopBtn.classList.toggle('visible', scrollY > 450);
+    }
+
+    // Scroll Spy for active section highlighting
+    let currentSection = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 180;
+      const sectionHeight = section.offsetHeight;
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        currentSection = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${currentSection}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+  // Back to top click
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // Mobile drawer controls
+  if (mobileMenuBtn && mobileDrawer) {
+    mobileMenuBtn.addEventListener('click', () => mobileDrawer.classList.add('open'));
+  }
+  if (mobileDrawerClose && mobileDrawer) {
+    mobileDrawerClose.addEventListener('click', () => mobileDrawer.classList.remove('open'));
+  }
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (mobileDrawer) mobileDrawer.classList.remove('open');
+    });
+  });
+}
+
+/* ==========================================================================
+   4. PARCHMENT <-> CYBER TERMINAL DECRYPTOR TOGGLE
+   ========================================================================== */
+function initTerminalToggle() {
+  const toggleBtn = document.getElementById('toggle-terminal-mode');
+  const parchmentBody = document.getElementById('parchment-content-body');
+  const terminalView = document.getElementById('cyber-terminal-view');
+  if (!toggleBtn || !parchmentBody || !terminalView) return;
+
+  let isTerminalMode = false;
+
+  toggleBtn.addEventListener('click', () => {
+    isTerminalMode = !isTerminalMode;
+    parchmentBody.classList.toggle('hidden', isTerminalMode);
+    terminalView.classList.toggle('active', isTerminalMode);
+
+    toggleBtn.innerHTML = isTerminalMode
+      ? `<span>📜</span> [ROYAL MANUSCRIPT VIEW]`
+      : `<span>💻</span> [CYBER DECRYPTOR VIEW]`;
+  });
+}
+
+/* ==========================================================================
+   5. 3D TILT EFFECT ON CARDS
+   ========================================================================== */
+function init3DCardTilt() {
+  // Only apply tilt on larger screens and when user does not prefer reduced motion
+  if (window.innerWidth < 992 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return;
+  }
+
+  const cards = document.querySelectorAll('.battle-card, .arsenal-card, .parchment-card');
+
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = ((y - centerY) / centerY) * -5;
+      const rotateY = ((x - centerX) / centerX) * 5;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+
+      // Update glare coordinates
+      card.style.setProperty('--mouse-card-x', `${(x / rect.width) * 100}%`);
+      card.style.setProperty('--mouse-card-y', `${(y / rect.height) * 100}%`);
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
+    });
+  });
+}
+
+/* ==========================================================================
+   6. TORCHLIGHT SPOTLIGHT FOLLOWER
+   ========================================================================== */
+function initTorchlightFollower() {
+  window.addEventListener('mousemove', (e) => {
+    document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
+    document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
+  });
+}
+
+/* ==========================================================================
+   7. MODALS & INTERACTIVE DIALOGS
+   ========================================================================== */
+function initModals() {
+  const modalBackdrop = document.getElementById('realm-modal-backdrop');
+  const modalTitle = document.getElementById('modal-title');
+  const modalSubtitle = document.getElementById('modal-subtitle');
+  const modalBody = document.getElementById('modal-body-content');
+  const modalClose = document.getElementById('modal-close-btn');
+
+  if (!modalBackdrop) return;
+
+  function openModal(title, subtitle, contentHtml) {
+    modalTitle.textContent = title;
+    modalSubtitle.textContent = subtitle;
+    modalBody.innerHTML = contentHtml;
+    modalBackdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modalBackdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  if (modalClose) modalClose.addEventListener('click', closeModal);
+  modalBackdrop.addEventListener('click', (e) => {
+    if (e.target === modalBackdrop) closeModal();
+  });
+
+  // Escape key to close
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalBackdrop.classList.contains('open')) {
+      closeModal();
+    }
+  });
+
+  // Wire GitHub / Project Info Buttons
+  document.querySelectorAll('[data-open-project]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const projId = btn.getAttribute('data-open-project');
+      const projectDetails = getProjectDetails(projId);
+      if (projectDetails) {
+        openModal(projectDetails.title, projectDetails.status, projectDetails.content);
+      }
+    });
+  });
+
+  // Wire Contact / Email Button
+  document.querySelectorAll('[data-open-contact]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal(
+        "SUMMON THE WARRIOR — ADITYA",
+        "JECRC UNIVERSITY &bull; CYBER DISPATCH",
+        `
+          <p>Send an encrypted dispatch to Aditya's terminal at JECRC University. Open to collegiate inquiries, cybersecurity collaborations, and CTF challenges.</p>
+          <div class="modal-code-snippet">
+            <code>email: aditya26bcon2441@jecrcu.edu.in</code>
+            <button class="copy-snippet-btn" onclick="navigator.clipboard.writeText('aditya26bcon2441@jecrcu.edu.in'); showToast('Email address copied!');">COPY</button>
+          </div>
+          <div class="modal-code-snippet">
+            <code>github: https://github.com/aditya2302-web</code>
+            <button class="copy-snippet-btn" onclick="navigator.clipboard.writeText('https://github.com/aditya2302-web'); showToast('GitHub URL copied!');">COPY</button>
+          </div>
+          <div class="modal-code-snippet">
+            <code>citadel: JECRC University, Jaipur (B.Tech Cyber Security)</code>
+            <button class="copy-snippet-btn" onclick="navigator.clipboard.writeText('JECRC University'); showToast('University copied!');">COPY</button>
+          </div>
+          <p style="font-size:0.8rem; color: var(--gold-light); margin-top:1rem;">
+            <em>Pledged to defend the digital realm through knowledge, resilience, and code.</em>
+          </p>
+        `
+      );
+    });
+  });
+}
+
+function getProjectDetails(id) {
+  const projects = {
+    'password-generator': {
+      title: "PROJECT 01: PYTHON PASSWORD GENERATOR",
+      status: "STATUS: LEARNING / PLANNED",
+      content: `
+        <p>A beginner Python project designed to generate robust, cryptographically random passwords utilizing permutations of uppercase characters, lowercase characters, numbers, and symbols.</p>
+        <h4 style="color:var(--gold-primary); font-family:var(--font-serif); margin:1.25rem 0 0.5rem;">CORE LEARNING OBJECTIVES</h4>
+        <ul style="padding-left:1.2rem; line-height:1.8; color:var(--text-secondary);">
+          <li>Mastering Python standard library modules (<code>secrets</code>, <code>string</code>, <code>random</code>).</li>
+          <li>Entropy calculation and basic password strength verification.</li>
+          <li>Command Line Interface (CLI) input validation and secure storage practices.</li>
+        </ul>
+        <div class="modal-code-snippet">
+          <code>git clone https://github.com/aditya2302-web/python-password-generator.git</code>
+          <button class="copy-snippet-btn" onclick="navigator.clipboard.writeText('git clone https://github.com/aditya2302-web/python-password-generator.git'); showToast('Git clone command copied!');">COPY</button>
+        </div>
+        <p style="font-size:0.82rem; color:var(--text-muted);">
+          <em>Repository link will be activated once the first-semester implementation is finalized.</em>
+        </p>
+      `
+    },
+    'portfolio-website': {
+      title: "PROJECT 02: PERSONAL PORTFOLIO WEBSITE",
+      status: "STATUS: IN PROGRESS",
+      content: `
+        <p>This very interactive portfolio, fusing medieval fantasy worldbuilding from Game of Thrones with the modern aesthetic of a cybersecurity command post.</p>
+        <h4 style="color:var(--gold-primary); font-family:var(--font-serif); margin:1.25rem 0 0.5rem;">TECHNOLOGICAL ARCHITECTURE</h4>
+        <ul style="padding-left:1.2rem; line-height:1.8; color:var(--text-secondary);">
+          <li>Modular CSS3 custom properties with real-time House theming engine.</li>
+          <li>Web Audio API procedural synthesizer creating a zero-copyright medieval orchestra.</li>
+          <li>HTML5 Canvas particle physics system (snow, embers, golden dust motes).</li>
+          <li>Semantic, responsive layout crafted with accessible standards.</li>
+        </ul>
+        <div class="modal-code-snippet">
+          <code>git clone https://github.com/aditya2302-web/realm-of-cyber-portfolio.git</code>
+          <button class="copy-snippet-btn" onclick="navigator.clipboard.writeText('git clone https://github.com/aditya2302-web/realm-of-cyber-portfolio.git'); showToast('Git clone command copied!');">COPY</button>
+        </div>
+      `
+    },
+    'networking-lab': {
+      title: "PROJECT 03: NETWORKING FUNDAMENTALS LAB",
+      status: "STATUS: PLANNED",
+      content: `
+        <p>An educational project documenting hands-on understanding of IPv4/IPv6 addressing, subnetting, TCP/IP vs OSI models, routing protocols, and traffic analysis.</p>
+        <h4 style="color:var(--gold-primary); font-family:var(--font-serif); margin:1.25rem 0 0.5rem;">LAB ROADMAP</h4>
+        <ul style="padding-left:1.2rem; line-height:1.8; color:var(--text-secondary);">
+          <li>Linux network socket exploration and routing tables (<code>ip route</code>, <code>ss</code>, <code>traceroute</code>).</li>
+          <li>Packet capture analysis using Wireshark and tcpdump in a sandboxed VM.</li>
+          <li>DNS query mechanics and firewall fundamentals (iptables/ufw).</li>
+        </ul>
+        <div class="modal-code-snippet">
+          <code># Planned repository link: networking-fundamentals-lab</code>
+        </div>
+      `
+    },
+    'learning-notes': {
+      title: "PROJECT 04: CYBERSECURITY LEARNING NOTES",
+      status: "STATUS: IN PROGRESS",
+      content: `
+        <p>A living, structured knowledge repository covering fundamental concepts of computer science, hardware architectures, operating system security, and defense fundamentals.</p>
+        <h4 style="color:var(--gold-primary); font-family:var(--font-serif); margin:1.25rem 0 0.5rem;">CURATED TOPICS</h4>
+        <ul style="padding-left:1.2rem; line-height:1.8; color:var(--text-secondary);">
+          <li>CIA Triad (Confidentiality, Integrity, Availability) and threat models.</li>
+          <li>Linux permissions, file hierarchies, and privilege escalation concepts.</li>
+          <li>Common vulnerability patterns (OWASP Top 10 introduction).</li>
+          <li>Ethical disclosure guidelines and legal boundaries for security researchers.</li>
+        </ul>
+        <div class="modal-code-snippet">
+          <code>git clone https://github.com/aditya2302-web/cybersecurity-learning-notes.git</code>
+          <button class="copy-snippet-btn" onclick="navigator.clipboard.writeText('git clone https://github.com/aditya2302-web/cybersecurity-learning-notes.git'); showToast('Git clone command copied!');">COPY</button>
+        </div>
+      `
+    }
+  };
+  return projects[id];
+}
+
+/* ==========================================================================
+   8. AUDIO CONTROLLER BINDINGS
+   ========================================================================== */
+function initAudioControls() {
+  const playBtn = document.getElementById('audio-play-btn');
+  const muteBtn = document.getElementById('audio-mute-btn');
+  const volSlider = document.getElementById('audio-volume-slider');
+  const navSoundBtn = document.getElementById('nav-sound-toggle');
+
+  if (playBtn) {
+    playBtn.addEventListener('click', () => {
+      if (window.realmAudio) window.realmAudio.toggle();
+    });
+  }
+
+  if (navSoundBtn) {
+    navSoundBtn.addEventListener('click', () => {
+      if (window.realmAudio) window.realmAudio.toggle();
+    });
+  }
+
+  if (muteBtn) {
+    muteBtn.addEventListener('click', () => {
+      if (window.realmAudio) window.realmAudio.toggle();
+    });
+  }
+
+  if (volSlider) {
+    volSlider.addEventListener('input', (e) => {
+      if (window.realmAudio) {
+        window.realmAudio.setVolume(e.target.value / 100);
+      }
+    });
+  }
+}
+
+/* ==========================================================================
+   TOAST NOTIFICATION HELPER
+   ========================================================================== */
+function showToast(message) {
+  let toast = document.getElementById('realm-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'realm-toast';
+    toast.style.cssText = `
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: #0E1015;
+      border: 1px solid var(--gold-primary);
+      color: #FFE28A;
+      font-family: var(--font-serif);
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      padding: 0.65rem 1.5rem;
+      border-radius: 3px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.9), 0 0 15px var(--gold-glow);
+      z-index: 3000;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      text-transform: uppercase;
+    `;
+    document.body.appendChild(toast);
+  }
+
+  toast.textContent = message;
+  toast.style.opacity = '1';
+  toast.style.transform = 'translateX(-50%) translateY(0)';
+
+  clearTimeout(toast._timer);
+  toast._timer = setTimeout(() => {
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateX(-50%) translateY(20px)';
+  }, 2800);
+}
+
+window.showToast = showToast;
+
+  </script>
+</body>
+</html>
